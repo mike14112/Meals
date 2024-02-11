@@ -12,6 +12,22 @@ body{
     overflow-x: hidden;
 }
 
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
 
 /* header */
 
@@ -136,7 +152,7 @@ aside{
     margin-top: 16px;
 }
 .main-container{
-    width: 1200px;
+    min-width: 320px;
 }
 
 
@@ -144,15 +160,15 @@ aside{
 .main-container{
     display: flex;
     flex-direction: column;
-    width: 1200px;
+    min-width: 300px;
 
 }
 
 .list-products{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    width: 1200px;
+    min-width: 320px;
     
 }
 
@@ -208,7 +224,7 @@ aside{
 
 /* footer  */
 
-footer{
+.default-footer{
     display: flex;
     justify-content: space-around;
    margin-top: 100px;
@@ -220,7 +236,10 @@ footer{
 .autor-m{
    display: none;
 }
-
+.tablet-footer{
+    display: flex;
+    justify-content: space-around;
+}
 .main-footer{
     display: flex;
     flex-direction: column;
@@ -238,20 +257,104 @@ footer{
     margin-top: 24px;
     padding-left: 16px;
 }
+.tablet-footer{
+    display: none;
+}
 
 /* footer end  */
 
 
-@media screen and (max-width:768px) {
- 
-   
-ul{
-    display: flex;
-    justify-content: center;
-}
-    .nav{
-        margin-left: 0px;
+
+@media screen and (max-width:1023px) {
+    .header-section{
+     justify-content: flex-end;
     }
+   .header-section img{
+             width: 227px;
+             height: 229px;
+          }
+          .nav{
+             margin-top: 30px;
+             margin-left: 65px;
+          }
+          ul{
+             justify-content: space-between;
+             flex-wrap: nowrap;
+             overflow: scroll;
+          }
+          .btn-nav{
+             margin: 12px;
+          }
+ 
+ 
+          main{
+             display: flex;
+             flex-direction: column;
+          }
+          aside{
+             height: 48px;
+          }
+ 
+ 
+          .main-container{
+             min-width: 300px;
+          }
+          .main-container h2{
+           margin-left: 30px;
+           margin-bottom: 16px;
+         }
+         .list-products{
+             min-width: 300px;
+         }
+         .card{
+             width: 145px;
+             height: 270px;
+             padding: 4px 4px 4px 10px;
+             margin:20px;
+         }
+ 
+         .card img{
+             width: 137px;
+             height: 120px;
+            }
+
+            .footer-card{
+           display: flex;
+           flex-direction: column;
+           margin-top: 30px;
+           width: 86px;
+}
+
+
+            .btn-add{
+             width: 137px;
+             height:30px;
+             padding:9px 41px 9px 41px  ;
+            }
+        
+            .default-footer{
+                display: none;
+            }
+            .tablet-footer{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding-top:40px ;
+                padding-left: 64px;
+            }
+            .main-tablet-footer{
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 24px;
+                
+            }
+            .main-tablet-footer div{
+              margin-top: 36px;
+            }
+          
+         }
+
+@media screen and (max-width:767px) {
     header{
         display: flex;
         justify-content: center;
@@ -276,12 +379,14 @@ ul{
 
 
     .header-title{
-        width: 320px;
+        width: 300px;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-left: 30px;
     }
+
+
 
 
     main{
@@ -294,13 +399,13 @@ ul{
     aside{
         height: 48px;
         margin-bottom: 30px;
+        margin-left: 0px;
         width: 250px;
         margin-left: 0px;
     }
     .main-container{
         display: flex;
         flex-direction: column;
-        width: 300px;
     }
   
     
@@ -316,7 +421,7 @@ ul{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 300px;
+   
 }
 
    .card img{
@@ -336,10 +441,10 @@ ul{
     width: 86px;
 }
 
-footer{
+.default-footer{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 24px 10px 26px  10px;  
 }
 .autor{
@@ -353,10 +458,9 @@ footer{
     display: flex;
     margin-top: 34px;
 }
-
+.tablet-footer{
+    display: none;
+}
 
 }
 
-@media screen and(max-width:1024) {
-    
-}
