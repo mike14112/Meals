@@ -10,6 +10,7 @@ h1{
 body{
     background-color:#F2F2F3;
     overflow-x: hidden;
+    z-index: 0;
 }
 
 a:link {
@@ -28,6 +29,11 @@ a:active {
     text-decoration: none;
 }
 
+button{
+    border: none;
+    cursor: pointer;
+
+}
 
 /* header */
 
@@ -98,7 +104,6 @@ li{
     border:white 1px solid;
     background-color: white;
     border-radius: 50px;
-    cursor: pointer;
 }
 
 .btn-nav:hover{
@@ -121,40 +126,95 @@ aside{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 300px;
-    height:109px ;
+    min-width: 260px;
+    min-height:109px ;
     background-color: white;
- padding: 24px 16px 24px 16px;
- border-radius: 18px;
- margin-top: 70px ;
- margin-left: 40px;
+    padding: 24px 16px 24px 16px;
+    border-radius: 18px;
+    margin-top: 70px ;
+    margin-left: 40px;
 
 }
+
+
+
+.main-cart ul{
+    display: flex;
+    flex-direction: column;
+}
+
 
 .cart-btn{
-    cursor: pointer;
- border: none;
- background-color: #F2F2F3;
  padding: 2px 16px 2px 16px;
- border-radius:6px ;
-}
-
-.cart-btn:hover{
-    background-color: #FFAB08;
+ font-size: 24px;
+ font-weight: 900;
+ background-color: white;
 
 }
+
+
 .cart-header{
     display: flex;
     justify-content: space-around;
+}
+.cart-header span{
+    background-color: #F2F2F3;
+    padding: 10px 16px 2px 16px;
+    border-radius:6px ;
 }
 
 .main-cart{
     margin-top: 16px;
 }
+
+.main-cart li{
+    border-top: solid 1px #F2F2F3 ;
+    padding-top: 16px;
+
+}
+
+
+.cart-footer--head{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.count-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 13px 0px 19px 0px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.btn-checkout{
+    padding: 12px 72px 12px 72px;
+   border-radius: 16px;
+   background-color: #FF7020;
+   color: white;
+}
+
+.btn-checkout:hover{
+   cursor: pointer;
+   background-color: #FFAB08;
+}
+
+
+.cart-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8px;
+}
+.btn-hide{
+    background-color: white;
+    color: #B1B1B1;
+}
 .main-container{
     min-width: 320px;
 }
-
+                        
 
 
 .main-container{
@@ -205,8 +265,6 @@ aside{
 }
 .btn-add{
     margin-top: 8px;
-    border:none;
-    cursor: pointer;
   padding: 12px  101px 12px 101px;
   border-radius:12px ;
   width: 300px;
@@ -256,7 +314,12 @@ aside{
 .group-links{
     margin-top: 24px;
     padding-left: 16px;
+
 }
+
+.group-links a{
+    margin: 16px;
+   }
 .tablet-footer{
     display: none;
 }
@@ -292,12 +355,15 @@ aside{
              flex-direction: column;
           }
           aside{
-             height: 48px;
+             z-index: 1;
+             position: absolute;
+             margin-top: -25rem;
           }
  
  
           .main-container{
              min-width: 300px;
+             margin-top: 10rem;
           }
           .main-container h2{
            margin-left: 30px;
@@ -351,6 +417,11 @@ aside{
             .main-tablet-footer div{
               margin-top: 36px;
             }
+            .group-links-tablet  {
+                margin: 10px;
+               }
+
+        
           
          }
 
@@ -358,7 +429,6 @@ aside{
     header{
         display: flex;
         justify-content: center;
-        overflow: hidden;
         
         
     }
@@ -367,7 +437,6 @@ aside{
         flex-direction: column-reverse;
        justify-content: center;
        padding: 20px;
-       overflow: hidden;
 
     }
 
@@ -397,11 +466,13 @@ aside{
     }
 
     aside{
-        height: 48px;
+        /* height: 48px; */
         margin-bottom: 30px;
         margin-left: 0px;
-        width: 250px;
+        /* width: 250px; */
         margin-left: 0px;
+        margin-top: -0rem;
+ 
     }
     .main-container{
         display: flex;
@@ -446,6 +517,7 @@ aside{
     flex-direction: column;
     align-items: flex-start;
     padding: 24px 10px 26px  10px;  
+    overflow: hidden;
 }
 .autor{
     display: none;
