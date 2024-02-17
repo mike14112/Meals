@@ -38,6 +38,10 @@ button{
     display: none;
 }
 
+button{
+    border: none;
+}
+
 
 /* header */
 
@@ -174,7 +178,39 @@ aside{
 .main-cart li{
     border-top: solid 1px #F2F2F3 ;
     padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 84px;
 
+}
+
+.item-descr{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.item-descr span{
+  margin-top: 5px;
+}
+
+.item-section{
+    background-color: #F2F2F3;
+    padding: 9px 12px 9px 12px;
+    border-radius: 16px;
+     min-width: 84px;
+     min-height: 30px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     margin-top: 5px;
+     margin-left: 24px;
+}
+
+.item-section button{
+   border: none;
+   background-color: #F2F2F3;
 }
 
 
