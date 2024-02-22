@@ -184,7 +184,13 @@ aside{
     height: 84px;
 
 }
-
+.main-cart li span {
+    font-size: 12px;
+}
+.img-cart{
+    width:64px ;
+    height: 52px;
+}
 .item-descr{
     display: flex;
     flex-direction: column;
