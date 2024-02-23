@@ -4,8 +4,7 @@ const tabsContents = document.querySelectorAll('.tab-content')
 
 
 // кнопки корзины
-const btnBasket = document.querySelector('.cart-btn'),
-btnHIde = document.querySelector('.btn-hide')
+
 
 // кнопки добавление 
 const btnAdds = document.querySelectorAll('.btn-add')
@@ -17,7 +16,8 @@ const  cartHeader = document.querySelector('.cart-header-empty'),
        listsItems = document.querySelector('.lists-item'),
        itemCount = document.querySelector('.item-count'),
        priceCount = document.querySelector('.price-count')
-
+       const btnBasket = document.querySelector('.cart-btn'),
+       btnHIde = document.querySelector('.btn-hide')
 /// продукты 
 const cards = document.querySelectorAll('.card')
 
@@ -47,29 +47,59 @@ btnTab.forEach( tab => {
         
 })
 
-//показ-скрытие корзины
 
-btnBasket.addEventListener('click', ()=> {
-   cartContent.classList.toggle('hide')
-})
 
-btnHIde.addEventListener('click', () => {
-  listsItems.classList.add('hide')
 
-    cartHeader.classList.add('hide');
-    mainCart.classList.remove('hide');
 
-})
 
 
 const products = []
 
+
+
+
+
 //addTocart 
 
 const addTocart = (obj) => {
+
+
 products.push(obj)
+
 renderCart(products)
+
+
 }
+
+
+
+//  //показ-скрытие корзины   с помощью кнопки
+
+btnHIde.addEventListener('click' ,() => {
+  mainCart.classList.toggle('hide')
+})
+btnBasket.addEventListener('click', () => {
+  mainCart.classList.toggle('hide')
+
+})
+
+  //показ-скрытие корзины
+
+const hideMainCart =  (arr) => {
+  if(arr.length == 0){
+    mainCart.classList.add('hide')
+    cartHeader.textContent = ' В корзине пока пусто :( '
+
+  }
+    if(arr.length > 0){
+      mainCart.classList.remove('hide')
+      cartHeader.textContent = ''
+
+    }
+  
+}
+
+
 
 
 const createCartObject = (btns, cards) => {
@@ -91,15 +121,16 @@ btns.forEach((btn, idx) => {
 
       if (existingItem) {
        alert(`Этот  Товар Уже Есть ${name} В корзине `)
+
       } else {
         product.img = img;
         product.name = name;
         product.price = price;
         product.weight = weight;
         product.count = 1;
-
         addTocart(product);
         product = {}
+
       }
   })
 
@@ -139,6 +170,8 @@ const renderCart =  (products) => {
    const btnMinus = document.querySelectorAll('.btn-minus'),
    btnPlus = document.querySelectorAll('.btn-plus')   
 
+
+   hideMainCart(products)
 
 
  
