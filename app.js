@@ -1,5 +1,5 @@
 //// кнопки  tab
-const   btnTab = document.querySelectorAll('.btn-nav')
+const   btnTabs = document.querySelectorAll('.btn-nav')
 const tabsContents = document.querySelectorAll('.tab-content')
 
 
@@ -21,22 +21,28 @@ const  cartHeader = document.querySelector('.cart-header-empty'),
 /// продукты 
 const cards = document.querySelectorAll('.card')
 
-/// массив продуктов 
-// const products  = []
 
+// onclick(btnTabs[i].style.backgroundColor = 'black')
 
 
 /////////// табы 
-btnTab.forEach( tab => {
+
+
+btnTabs.forEach( tab => {
     tab.addEventListener('click', () => {
         let  tabId = tab.getAttribute('data-tab')
 
         if(tabId != null){
             tabsContents.forEach( content => {
                 content.classList.remove('active')
+                btnTabs.forEach(btn => {
+                btn.style.backgroundColor = '#FFFFFF'
+               })
+              
             })
-        
             document.getElementById(tabId).classList.add('active')
+               
+            tab.style.backgroundColor = '   #FFAB08'
         }else{
             console.log('dsdad')
         }
