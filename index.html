@@ -7,7 +7,7 @@
     <title>meals</title>
   </head>
   <body>
-    <header>
+    <header class="header">
       <img src="img/logo.png" alt="" />
     </header>
     <div class="header-section">
@@ -15,12 +15,53 @@
       <div class="header-title">
         <h1>
           Только самые <br />
-          <span> сочные бургеры </span>!
+          <p> сочные бургеры !</p>
         </h1>
         <span>Бесплатная доставка от 599₽</span>
       </div>
     </div>
+ 
+    <div class="modal hide">
+      <div class="modal-window">
+        <div class="side-modal">
+          <img src="img/modal-img.png" alt="">
+        </div>
+        <div class="form-modal">
+          <img src="img/close-modal.png" alt="" class="btn-close-modal">
+          <form action="" class="form">
+        <h2>Доставка</h2>
+            <input type="text" placeholder="Ваше Имя"  class="input-name">
+            <input type="text" placeholder="Телефон" class="input-phone">
+            <div class="radio-section">
+              <span>
+                <input type="radio"  value="pickup" checked name="btn-radio"  class="btn-radio">
+                <label for="pickup">Самовывоз</label>
+            </span>
+
+                <span>
+                  <input type="radio" value="delivery" name="btn-radio" class="btn-radio" >
+                  <label for="delivery">Доставка</label>
+              </span>
+            </div>
+             <div class="delivery-section hide">
+              <input type="text" placeholder="Улица, дом, квартира" class="input-adress">
+               <div class="section-home-input">
+                <input type="text" placeholder="Этаж"  class="input-floor" >
+                <input type="text" placeholder="Домофон"  class="input-intercom">
+               </div>
+
+             </div>
+
+             <button class="btn-confirn">Оформить</button>
+          </form>
+          <button class="btn-confirn-mobile">Оформить</button>
+
+        </div>
+      </div>
+      </div>
     <main>
+
+    
       <section class="navigation">
         <div class="container">
           <ul class="nav">
@@ -34,7 +75,7 @@
             </li>
             <li class="nav-item" data-tab="3">
               <img src="img/icon/Хот-доги.png" alt="" />
-              <span>Хот-доги</span>
+              <p>Хот-доги</p>
             </li>
             <li class="nav-item" data-tab="4">
               <img src="img/icon/Комбо.png" alt="" />
@@ -65,6 +106,8 @@
       </section>
       <section>
         <div class="container">
+
+
           <div class="wrapper">
             
             <aside>
@@ -81,7 +124,7 @@
                     <span>Итого</span>
                     <span class="price-count">0 <span>₽</span></span>
                   </div>
-                  <button class="btn-checkout">Оформить Заказ</button>
+                  <button class="btn-checkout ">Оформить Заказ</button>
                   <div class="cart-footer">
                     <img src="img/icon/delivery.png" alt="" />
                     <span>Бесплатная Доставка</span>
@@ -89,11 +132,10 @@
                   </div>
                 </div>
               </div>
-              <div class="modal"></div>
             </aside>
-
-            <div>
+       
     
+      
               <div class="tab-content active" id="1">
                 <h2>Бургеры</h2>
                 <ul class="list-products">
@@ -160,45 +202,47 @@
                   </li>
                 </ul>
               </div>
+
               <div class="tab-content" id="2">
                 <h2>Закуски</h2>
                 <ul class="list-products">
-                  <article class="card">
+                  <li class="card">
                     <img src="img/items/2-1.png" alt="" class="img" />
                     <p class="price">250₽</p>
                     <span class="name">Начос</span>
                     <div class="footer-card">
                       <span class="weight">220г</span>
                       <button class="btn-add">Добавить</button>
+                      <li class="card">
+                        <img src="img/items/2-2.png" alt="" class="img" />
+                        <p class="price">245₽</p>
+                        <span class="name">Картошка фри</span>
+                        <div class="footer-card">
+                          <span class="weight">180г</span>
+                          <button class="btn-add">Добавить</button>
+                        </div>
+                      </li>
+                  </li>
+
+      
+                      <li class="card">
+                        <img src="img/items/2-3.png" alt="" class="img" />
+                        <p class="price">230₽</p>
+                        <span class="name">Луковые кольца</span>
+                        <div class="footer-card">
+                          <span class="weight">160г</span>
+                          <button class="btn-add">Добавить</button>
+                        </div>
+                      </li>
                     </ul>
-                  </article>
   
-                  <article class="card">
-                    <img src="img/items/2-2.png" alt="" class="img" />
-                    <p class="price">245₽</p>
-                    <span class="name">Картошка фри</span>
-                    <div class="footer-card">
-                      <span class="weight">180г</span>
-                      <button class="btn-add">Добавить</button>
-                    </div>
-                  </article>
-  
-                  <article class="card">
-                    <img src="img/items/2-3.png" alt="" class="img" />
-                    <p class="price">230₽</p>
-                    <span class="name">Луковые кольца</span>
-                    <div class="footer-card">
-                      <span class="weight">160г</span>
-                      <button class="btn-add">Добавить</button>
-                    </div>
-                  </article>
+                 
                 </div>
-              </div>
-  
+                
               <div class="tab-content" id="3">
                 <h2>Хот-доги</h2>
                 <div class="list-products">
-                  <article class="card">
+                  <li class="card">
                     <img src="img/items/3-1.png" alt="" class="img" />
                     <p class="price">290₽</p>
                     <span class="name">Домашний хот-дог</span>
@@ -206,9 +250,9 @@
                       <span class="weight">250г</span>
                       <button class="btn-add">Добавить</button>
                     </div>
-                  </article>
+                  </li>
   
-                  <article class="card">
+                  <li class="card">
                     <img src="img/items/3-2.png" alt="" class="img" />
                     <p class="price">239₽</p>
                     <span class="name"> Жгучий хот-дог</span>
@@ -216,9 +260,9 @@
                       <span class="weight">245г </span>
                       <button class="btn-add">Добавить</button>
                     </div>
-                  </article>
+                  </li>
   
-                  <article class="card">
+                  <li class="card">
                     <img src="img/items/3-3.png" alt="" class="img" />
                     <p class="price">220₽</p>
                     <span class="name">Классический хот-дог</span>
@@ -226,63 +270,64 @@
                       <span class="weight">215г </span>
                       <button class="btn-add">Добавить</button>
                     </div>
-                  </article>
+                  </li>
                 </div>
               </div>
   
               <div class="tab-content" id="4">
                 <h2>Комбо</h2>
                 <div class="list-products">
-                  <article class="card">
+                  <li class="card">
                     <h2>тут продуктов пока нет</h2>
-                  </article>
+                  </li>
                 </div>
               </div>
               <div class="tab-content" id="5">
                 <h2>Шаурма</h2>
                 <div class="list-products">
-                  <article class="card">
+                  <li class="card">
                     <h2>тут продуктов пока нет</h2>
-                  </article>
+                  </li>
                 </div>
               </div>
   
               <div class="tab-content" id="6">
                 <h2>Пицца</h2>
                 <div class="list-products">
-                  <article class="card">
+                  <li class="card">
                     <h2>тут продуктов пока нет</h2>
-                  </article>
+                  </li>
                 </div>
               </div>
   
               <div class="tab-content" id="7">
                 <h2>Вок</h2>
                 <div class="list-products">
-                  <article class="card">
+                  <li class="card">
                     <h2>тут продуктов пока нет</h2>
-                  </article>
+                  </li>
                 </div>
               </div>
   
               <div class="tab-content" id="8">
                 <h2>Десерты</h2>
                 <div class="list-products">
-                  <article class="card">
+                  <li class="card">
                     <h2>тут продуктов пока нет</h2>
-                  </article>
+                  </li>
                 </div>
               </div>
   
               <div class="tab-content" id="9">
                 <h2>Комбо</h2>
                 <div class="list-products">
-                  <article class="card">
+                  <li class="card">
                     <h2>тут продуктов пока нет</h2>
-                  </article>
+                  </li>
                 </div>
               </div>
-            </div>
+              </div>
+  
         
           </div>
        
@@ -291,8 +336,8 @@
       </section>
     </main>
 
-    <footer>
-      <div class="default-footer">
+    <footer class="footer">
+      <div class="desktop-footer">
         <div class="main-footer">
           <img src="img/footer-logo.png" alt="" />
           <span class="autor"
@@ -343,11 +388,36 @@
           <div class="links-logo">
             <a href="https://vk.com/"><img src="img/icon/vk.png" alt="" /></a>
             <a href="https://web.telegram.org/"
-              ><img src="img/icon/bi_telegram.png" alt=""
-            /></a>
+              ><img src="img/icon/bi_telegram.png" alt=""/></a>
           </div>
         </div>
       </div>
+
+      <div class="mobile-footer">
+        <img src="img/footer-logo.png" alt="" class="logo" />
+        <div class="contact-section">
+          <h2>Номер для заказа</h2>
+          <div class="links-footer">
+            <img src="img/icon/Call.png" alt="" />
+            <a href="tel:+7(930)833-38-11">+7(930)833-38-11</a>
+          </div>
+        
+         
+        </div>
+       
+        <div class="group-links-tablet">
+          <h2>Мы в соцсетях</h2>
+          <div class="links-icon">
+            <a href="https://vk.com/"><img src="img/icon/vk.png" alt="" /></a>
+            <a href="https://web.telegram.org/"
+              ><img src="img/icon/bi_telegram.png" alt=""/></a>
+          </div>
+        </div>
+        <span class="autor"
+        >© YouMeal, 2022 <br />
+        Design: Anastasia Ilina</span>
+      </div>
+      
     </footer>
 
     <script src="app.js"></script>
