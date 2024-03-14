@@ -211,13 +211,7 @@ form.addEventListener("submit", (event) => {
     inputIntercom = document.querySelector(".input-intercom");
   const order = {};
 
-  if (
-    !isDelivery &&
-    inputName.value.length >= 4 &&
-    inputName.value.length <= 10 &&
-    inputPhone.value.length >= 4 &&
-    inputPhone.value.length <= 12
-  ) {
+  if (!isDelivery) {
     order.id = Math.trunc(Math.random() * 950);
     order.name = inputName.value;
     order.phone = inputPhone.value;
@@ -227,21 +221,9 @@ form.addEventListener("submit", (event) => {
     inputName.value = "";
     inputPhone.value = "";
     modal.classList.add("hide");
-    console.log(order);
   }
 
-  if (
-    isDelivery &&
-    inputName.value.length >= 4 &&
-    inputName.value.length <= 10 &&
-    inputPhone.value.length == 12 &&
-    inputAdress.value.length >= 4 &&
-    inputAdress.value.length <= 20 &&
-    inputFloor.value.length >= 1 &&
-    inputFloor.value.length <= 50 &&
-    inputIntercom.value.length >= 1 &&
-    inputIntercom.value.length <= 20
-  ) {
+  if (isDelivery) {
     order.name = inputName.value;
     order.phone = inputPhone.value;
     order.adress = inputAdress.value;
