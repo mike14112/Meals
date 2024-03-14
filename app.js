@@ -209,9 +209,14 @@ form.addEventListener("submit", (event) => {
     inputAdress = document.querySelector(".input-adress"),
     inputFloor = document.querySelector(".input-floor"),
     inputIntercom = document.querySelector(".input-intercom");
+
   const order = {};
 
-  if (!isDelivery) {
+  if (
+    !isDelivery &&
+    inputName.value.length != "" &&
+    inputPhone.value.length != ""
+  ) {
     order.id = Math.trunc(Math.random() * 950);
     order.name = inputName.value;
     order.phone = inputPhone.value;
@@ -221,13 +226,20 @@ form.addEventListener("submit", (event) => {
     inputName.value = "";
     inputPhone.value = "";
     modal.classList.add("hide");
-
     products.splice(0);
     renderCart(products);
     priceCount.textContent = "0 ₽";
+    console.log(order);
   }
 
-  if (isDelivery) {
+  if (
+    isDelivery &&
+    inputName.value.length != "" &&
+    inputPhone.value.length != "" &&
+    inputAdress.value.length != '' &&
+    inputFloor.value.length != '' && 
+    inputIntercom.value.length != ''
+  ) {
     order.name = inputName.value;
     order.phone = inputPhone.value;
     order.adress = inputAdress.value;
@@ -236,17 +248,15 @@ form.addEventListener("submit", (event) => {
     order.isDeliver = isDelivery;
     order.orderItems = products.splice(0);
     order.totalPice = totalPriceItems;
-
     inputName.value = "";
     inputPhone.value = "";
     inputAdress.value = "";
     inputFloor.value = "";
     inputIntercom.value = "";
-    console.log(order);
     modal.classList.add("hide");
-
     products.splice(0);
     renderCart(products);
     priceCount.textContent = "0 ₽";
+    console.log(order);
   }
 });
