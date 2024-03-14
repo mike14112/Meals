@@ -1,4 +1,3 @@
-//// кнопки  tab
 const btnTabs = document.querySelectorAll(".nav-item");
 const tabsContents = document.querySelectorAll(".tab-content");
 //form
@@ -10,12 +9,11 @@ const btnClose = document.querySelector(".btn-close-modal");
 form.addEventListener("submit", (event) => {
   event.preventDefault;
 });
-// кнопки корзины
+// button  basket
 
-// кнопки добавление
 const btnAdds = document.querySelectorAll(".btn-add");
 
-//элэменты корзины
+//Basket Items
 const cartHeader = document.querySelector(".cart-header-empty"),
   mainCart = document.querySelector(".main-cart"),
   listsItems = document.querySelector(".lists-item"),
@@ -24,12 +22,11 @@ const cartHeader = document.querySelector(".cart-header-empty"),
 const btnBasket = document.querySelector(".cart-btn"),
   btnHIde = document.querySelector(".btn-hide");
 const btnCheckout = document.querySelector(".btn-checkout");
-/// продукты
+
+/// Items
 const cards = document.querySelectorAll(".card");
 
-// onclick(btnTabs[i].style.backgroundColor = 'black')
-
-/////////// табы
+/////////// tabs
 
 btnTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -61,7 +58,7 @@ const addTocart = (obj) => {
   renderCart(products);
 };
 
-//  //показ-скрытие корзины   с помощью кнопки
+//  //show & hide   basket with button
 
 btnHIde.addEventListener("click", () => {
   mainCart.classList.toggle("hide");
@@ -70,7 +67,7 @@ btnBasket.addEventListener("click", () => {
   mainCart.classList.toggle("hide");
 });
 
-//показ-скрытие корзины
+//show & hide basket
 
 const hideMainCart = (arr) => {
   if (arr.length == 0) {
@@ -177,10 +174,12 @@ const controlCart = (arr, btnMinus, btnBtnPlus) => {
   });
 };
 
-/////Отображение  и скрытие   Modal
+///show & hide modal
 
 btnCheckout.addEventListener("click", () => {
-  modal.classList.remove("hide");
+  if (products.length !== 0) {
+    modal.classList.remove("hide");
+  }
 });
 
 btnClose.addEventListener("click", () => {
@@ -201,7 +200,8 @@ btnsRadio.forEach((btn) => {
   });
 });
 
-// оформление заказа
+// Placing an order
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const inputName = document.querySelector(".input-name"),
@@ -214,25 +214,33 @@ form.addEventListener("submit", (event) => {
   if (
     !isDelivery &&
     inputName.value.length >= 4 &&
-    inputPhone.value.length >= 8
+    inputName.value.length <= 10 &&
+    inputPhone.value.length >= 4 &&
+    inputPhone.value.length <= 12
   ) {
     order.id = Math.trunc(Math.random() * 950);
-    (order.name = inputName.value), (order.phone = inputPhone.value);
+    order.name = inputName.value;
+    order.phone = inputPhone.value;
     order.isDeliver = isDelivery;
-    order.orderItems = products;
+    order.orderItems = products.splice(0);
     order.totalPice = totalPriceItems;
     inputName.value = "";
     inputPhone.value = "";
+    modal.classList.add("hide");
     console.log(order);
   }
 
   if (
     isDelivery &&
     inputName.value.length >= 4 &&
-    inputPhone.value.length >= 8 &&
+    inputName.value.length <= 10 &&
+    inputPhone.value.length == 12 &&
     inputAdress.value.length >= 4 &&
+    inputAdress.value.length <= 20 &&
     inputFloor.value.length >= 1 &&
-    inputIntercom.value.length >= 2
+    inputFloor.value.length <= 50 &&
+    inputIntercom.value.length >= 1 &&
+    inputIntercom.value.length <= 20
   ) {
     order.name = inputName.value;
     order.phone = inputPhone.value;
@@ -240,7 +248,7 @@ form.addEventListener("submit", (event) => {
     order.floor = inputFloor.value;
     order.interCom = inputIntercom.value;
     order.isDeliver = isDelivery;
-    order.orderItems = products;
+    order.orderItems = products.splice(0);
     order.totalPice = totalPriceItems;
 
     inputName.value = "";
@@ -249,5 +257,10 @@ form.addEventListener("submit", (event) => {
     inputFloor.value = "";
     inputIntercom.value = "";
     console.log(order);
+    modal.classList.add("hide");
   }
+
+  products.splice(0);
+  renderCart(products);
+  priceCount.textContent = "0 ₽";
 });
