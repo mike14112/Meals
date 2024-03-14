@@ -221,6 +221,10 @@ form.addEventListener("submit", (event) => {
     inputName.value = "";
     inputPhone.value = "";
     modal.classList.add("hide");
+
+    products.splice(0);
+    renderCart(products);
+    priceCount.textContent = "0 ₽";
   }
 
   if (isDelivery) {
@@ -240,9 +244,9 @@ form.addEventListener("submit", (event) => {
     inputIntercom.value = "";
     console.log(order);
     modal.classList.add("hide");
-  }
 
-  products.splice(0);
-  renderCart(products);
-  priceCount.textContent = "0 ₽";
+    products.splice(0);
+    renderCart(products);
+    priceCount.textContent = "0 ₽";
+  }
 });
