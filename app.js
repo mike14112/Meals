@@ -11,8 +11,8 @@ const btnClose = document.querySelector(".btn-close-modal");
 const btnAdds = document.querySelectorAll(".btn-add");
 
 //Basket Items
-const cartHeader = document.querySelector(".cart-header-empty"),
-  mainCart = document.querySelector(".main-cart"),
+const cartHeader = document.querySelector(".main-cart-empty"),
+  mainCart = document.querySelector(".content-cart "),
   listsItems = document.querySelector(".lists-item"),
   itemCount = document.querySelector(".item-count"),
   priceCount = document.querySelector(".price-count");
@@ -147,11 +147,22 @@ const renderCart = (products) => {
 
   hideMainCart(products);
 
-  controlCart(products, btnMinus, btnPlus);
+  decreaseCount(products, btnMinus);
+  increaseCount(products, btnPlus);
 };
 
 // control Cart
-const controlCart = (arr, btnMinus, btnBtnPlus) => {
+
+const increaseCount = (arr, btnPlus) => {
+  btnPlus.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      arr[i].count++;
+      renderCart(arr);
+    });
+  });
+};
+
+const decreaseCount = (arr, btnMinus) => {
   btnMinus.forEach((btn, i) => {
     if (arr[i].count == 0) {
       arr.splice(i, 1);
@@ -160,12 +171,6 @@ const controlCart = (arr, btnMinus, btnBtnPlus) => {
     }
     btn.addEventListener("click", () => {
       arr[i].count--;
-      renderCart(arr);
-    });
-  });
-  btnBtnPlus.forEach((btn, i) => {
-    btn.addEventListener("click", () => {
-      arr[i].count++;
       renderCart(arr);
     });
   });

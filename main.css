@@ -155,7 +155,7 @@ input[type="number"] {
   padding-top: 24px;
 }
 
-.header-section {
+.promo-group {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,13 +163,13 @@ input[type="number"] {
   border-radius: 0 0 320px 240px;
 }
 
-.header-section img {
+.promo-group img {
   width: 254px;
   height: 300px;
   margin: 24px;
 }
 
-.header-title {
+.promo-title {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -178,10 +178,10 @@ input[type="number"] {
   color: white;
 }
 
-.header-title h1 {
+.promo-title h1 {
   color: white;
 }
-.header-title p {
+.promo-title p {
   color: red;
 }
 .wrapper {
@@ -244,21 +244,21 @@ aside {
   background-color: white;
 }
 
-.cart-header {
+.main-cart {
   display: flex;
   justify-content: space-around;
 }
-.cart-header span {
+.main-cart span {
   background-color: #f2f2f3;
   padding: 10px 16px 2px 16px;
   border-radius: 6px;
 }
 
-.main-cart {
+.content-cart {
   margin-top: 16px;
 }
 
-.main-cart li {
+.content-cart li {
   border-top: solid 1px #f2f2f3;
   padding-top: 16px;
   display: flex;
@@ -266,7 +266,7 @@ aside {
   justify-content: space-between;
   height: 84px;
 }
-.main-cart li span {
+.content-cart li span {
   font-size: 12px;
 }
 .img-cart {
@@ -301,7 +301,7 @@ aside {
   background-color: #f2f2f3;
 }
 
-.cart-footer--head {
+.cart-group {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -327,7 +327,7 @@ aside {
   background-color: #ffab08;
 }
 
-.cart-footer {
+.cart-content-group {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -363,7 +363,7 @@ aside {
   margin-top: 30px;
 }
 
-.footer-card {
+.card-sub-group {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
@@ -449,10 +449,10 @@ aside {
     display: none;
   }
 
-  .header-section {
+  .promo-group {
     border-radius: 0 0 10rem 10rem;
   }
-  .header-section img {
+  .promo-group img {
     width: 176px;
     height: 204px;
   }
@@ -540,18 +540,18 @@ aside {
     gap: 8px;
   }
 
-  .header-section {
+  .promo-group {
     display: flex;
     flex-direction: column-reverse;
     height: 460px;
     border-radius: 0px 0px 200px 200px;
   }
-  .header-title {
+  .promo-title {
     display: flex;
     align-items: center;
     margin-left: 40px;
   }
-  .header-section img {
+  .logo-section img {
     width: 176px;
     height: 204px;
   }
