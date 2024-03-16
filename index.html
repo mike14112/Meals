@@ -28,29 +28,31 @@
         <div class="form-modal">
           <img src="img/close-modal.png" alt="" class="btn-close-modal">
           <form action="" class="form">
-        <h2>Доставка</h2>
-            <input type="text" placeholder="Ваше Имя" minlength="4" maxlength="10" class="input-name">
-            <input type="number"  min="1"  max="999" minlength="12"  maxlength="12" placeholder="Телефон" class="input-phone">
-            <div class="radio-section">
-              <span>
-                <input type="radio"  value="pickup" checked name="btn-radio"  class="btn-radio">
-                <label for="pickup">Самовывоз</label>
-            </span>
-                <span>
-                  <input type="radio" value="delivery" name="btn-radio" class="btn-radio" >
-                  <label for="delivery">Доставка</label>
-              </span>
-            </div>
-             <div class="delivery-section hide">
-              <input type="text" placeholder="Улица, дом, квартира" class="input-adress">
-               <div class="section-home-input">
-                <input type="number"  class="input-floor" min="1" max="100" maxlength="2" placeholder="Этаж">
-                <input type="number" placeholder="Домофон"  maxlength="4" min="1" max="999" class="input-intercom">
-               </div>
-             </div>
-             <button class="btn-confirn">Оформить</button>
+     <div class="modal-group">
+      <h2>Доставка</h2>
+      <input type="text" placeholder="Ваше Имя" minlength="4" maxlength="10" class="input-name">
+      <input type="number"  min="1"  max="999" minlength="12"  maxlength="12" placeholder="Телефон" class="input-phone">
+      <div class="radio-section">
+        <span>
+          <input type="radio"  value="pickup" checked name="btn-radio"  class="btn-radio">
+          <label for="pickup">Самовывоз</label>
+      </span>
+          <span>
+            <input type="radio" value="delivery" name="btn-radio" class="btn-radio" >
+            <label for="delivery">Доставка</label>
+        </span>
+      </div>
+       <div class="delivery-section hide">
+        <input type="text" placeholder="Улица, дом, квартира" class="input-adress">
+         <div class="section-home-input">
+          <input type="number"  class="input-floor" min="1" max="100" maxlength="2" placeholder="Этаж">
+          <input type="number" placeholder="Домофон"  maxlength="4" min="1" max="999" class="input-intercom">
+         </div>
+       </div>
+     </div>
+     <button class="btn-confirn">Оформить</button>
+
           </form>
-          <button class="btn-confirn-mobile">Оформить</button>
         </div>
       </div>
       </div>

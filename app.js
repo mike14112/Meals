@@ -6,9 +6,6 @@ const btnsRadio = document.querySelectorAll(".btn-radio");
 // modal
 const modal = document.querySelector(".modal");
 const btnClose = document.querySelector(".btn-close-modal");
-form.addEventListener("submit", (event) => {
-  event.preventDefault;
-});
 // button  basket
 
 const btnAdds = document.querySelectorAll(".btn-add");
@@ -236,9 +233,9 @@ form.addEventListener("submit", (event) => {
     isDelivery &&
     inputName.value.length != "" &&
     inputPhone.value.length != "" &&
-    inputAdress.value.length != '' &&
-    inputFloor.value.length != '' && 
-    inputIntercom.value.length != ''
+    inputAdress.value.length != "" &&
+    inputFloor.value.length != "" &&
+    inputIntercom.value.length != ""
   ) {
     order.name = inputName.value;
     order.phone = inputPhone.value;
