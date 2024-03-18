@@ -1,351 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
     <title>meals</title>
-</head>
+  </head>
 <body>
-
-    <header>
-        <img src="img/HeaderLogo.png" alt="">
+    <header class="header">
+      <img src="img/logo.png" alt="" />
     </header>
-    <div class="header-section">
-        <img src="img/headerBurger.png" alt="">
-        <div class="header-title">
-            <h1>Только самые  <br>
-                <span> сочные бургеры </span>!</h1>
-
-                <span>Бесплатная доставка от 599₽</span>
+    <section class="promo-group">
+      <img src="img/burger.png" alt="" />
+      <div class="promo-title">
+        <h1>
+          Только самые <br />
+          <p> сочные бургеры !</p>
+        </h1>
+        <span>Бесплатная доставка от 599₽</span>
+      </div>
+    </section>
+    <div class="modal hide">
+      <div class="modal-window">
+        <div class="side-modal">
+          <img src="img/modal-img.png" alt="">
         </div>
-    </div>
-
+        <div class="form-modal">
+          <img src="img/close-modal.png" alt="" class="btn-close-modal">
     
-  <div class="nav">
-    <ul>
-        <li><button  class="btn-nav "  data-tab="1"><img src="img/icon/Бургеры.png" alt="">Бургеры</button></li>
-        <li><button class="btn-nav" data-tab="2"><img src="img/icon/Закуски.png" alt="">Закуски</button></li>
-        <li><button class="btn-nav" data-tab="3"><img src="img/icon/Хот-доги.png" alt="">Хот-доги</button></li>
-        <li><button class="btn-nav" data-tab="4"><img src="img/icon/Комбо.png" alt="">Комбо </button></li>
-        <li><button class="btn-nav" data-tab="5"><img src="img/icon/Шаурма.png" alt="">Шаурма</button></li>
-        <li><button class="btn-nav" data-tab="6"><img src="img/icon/Пицца.png" alt="">Пицца</button></li>
-        <li><button class="btn-nav" data-tab="7"><img src="img/icon/Вок.png" alt="">Вок</button></li>
-        <li><button class="btn-nav" data-tab="8"><img src="img/icon/Десерты.png" alt="">Десерты </button></li>
-        <li><button class="btn-nav" data-tab="9"><img src="img/icon/Соусы.png" alt="">Соусы</button></li>
-    </ul>
+          <h2 class="form-title">Доставка</h2>
 
-  </div>
-<main>
-    <aside>
-        <div class="cart-header">
-         <button class="cart-btn">Корзина</button>
-          <span class="item-count">0</span>
-         
-        </div>
-        <span class="cart-header-empty"> В корзине пока пусто :(
+          <form action="" class="form">
+     <div class="modal-group">
+      <input type="text" placeholder="Ваше Имя" minlength="4" maxlength="10" class="input-name">
+      <input type="number"  min="1"  max="999" minlength="12"  maxlength="12" placeholder="Телефон" class="input-phone">
+      <div class="radio-section">
+        <span>
+          <input type="radio"  value="pickup" checked name="btn-radio"  class="btn-radio">
+          <label for="pickup">Самовывоз</label>
+      </span>
+          <span>
+            <input type="radio" value="delivery" name="btn-radio" class="btn-radio" >
+            <label for="delivery">Доставка</label>
         </span>
-        <div class="main-cart hide ">
-         <ul class="lists-item">
-          
-         </ul>
-
-          <div class="cart-footer--head">
-            <div class="count-section">
-            <span>Итого</span>  
-            <span class="price-count">0 <span>₽</span></span>
-            </div>
-            <button class="btn-checkout">Оформить Заказ</button> 
-          <div class="cart-footer">
-            <img src="img/icon/delivery.png" alt=""> <span>Бесплатная Доставка</span>
-            <button class="btn-hide">Свернуть</button>
-          </div>
-          </div>
-        </div>
-        <div class="modal">
-
-        </div>
-    </aside>
-
-    <div class="tab-content active" id="1">
-       <h2>Бургеры</h2>
-       <div class="list-products">
-        <article class="card">
-            <img src="img/items/1-1.png" alt="" class="img">
-            <p class="price">689₽</p>
-            <span class="name">Мясная бомба</span>
-             <div class="footer-card">
-               <span class="weight">520г</span>
-               <button class="btn-add">Добавить</button>
-            </div>
-       
-       </article>
-
-        
-       <article class="card">
-        <img src="img/items/1-2.png" alt="" class="img">
-        <p class="price">550₽</p>
-        <span class="name">Супер сырный</span>
-         <div class="footer-card">
-           <span class="weight">512г</span>
-           <button class="btn-add">Добавить</button>
-        </div>
-   
-   </article>
-   
-    
-       <article class="card">
-       <div class="header-card">
-        <img src="img/items/1-3.png" alt="" class="img">
-        <p class="price">639₽</p>
-        <span class="name">Сытный</span>
-       </div>
-        <div class="footer-card">
-           <span class="weight">580г</span>
-           <button class="btn-add">Добавить</button>
-        </div>
-
-   </article>
-   
-       
-   <article class="card">
-     <img src="img/items/1-4.png" alt="" class="img">
-     <p class="price">480₽</p>
-     <span class="name">Тяжелый удар</span>
-      <div class="footer-card">
-        <span class="weight">470г</span>
-        <button class="btn-add">Добавить</button>
-     </div>
-
-</article>
-
-       
-<article class="card">
-    <img src="img/items/1-5.png" alt="" class="img">
-    <p class="price">450₽</p>
-    <span class="name">Вечная классика</span>
-     <div class="footer-card">
-       <span class="weight">450г</span>
-       <button class="btn-add">Добавить</button>
-    </div>
-
-</article>
-
-       
-<article class="card">
-  <img src="img/items/1-6.png" alt="" class="img">
-  <p class="price">560₽</p>
-  <span class="name">Итальянский</span>
-   <div class="footer-card">
-     <span class="weight">510г</span>
-     <button class="btn-add">Добавить</button>
-  </div>
-
-</article>
-
-       </div>
-    </div>
-    <div class="tab-content " id="2">
-      <h2>Закуски</h2>
-      <div class="list-products">
-       <article class="card">
-           <img src="img/items/2-1.png" alt="" class="img">
-           <p class="price">250₽</p>
-           <span class="name">Начос</span>
-            <div class="footer-card">
-              <span class="weight">220г</span>
-              <button class="btn-add">Добавить</button>
-           </div>
-      
-      </article>
-
-
-      <article class="card">
-        <img src="img/items/2-2.png" alt="" class="img">
-        <p class="price">245₽</p>
-        <span class="name">Картошка фри</span>
-         <div class="footer-card">
-           <span class="weight">180г</span>
-           <button class="btn-add">Добавить</button>
-        </div>
-   
-   </article>
-
-   <article class="card">
-    <img src="img/items/2-3.png" alt="" class="img">
-    <p class="price">230₽</p>
-    <span class="name">Луковые кольца</span>
-     <div class="footer-card">
-       <span class="weight">160г</span>
-       <button class="btn-add">Добавить</button>
-    </div>
-
-</article>
-   
       </div>
-   </div>
-
-   <div class="tab-content " id="3">
-    <h2>Хот-доги</h2>
-    <div class="list-products">
-     <article class="card">
-         <img src="img/items/3-1.png" alt="" class="img">
-         <p class="price">290₽</p>
-         <span class="name">Домашний хот-дог</span>
-          <div class="footer-card">
-            <span class="weight">250г</span>
-            <button class="btn-add">Добавить</button>
+       <div class="delivery-section hide">
+        <input type="text" placeholder="Улица, дом, квартира" class="input-adress">
+         <div class="section-home-input">
+          <input type="number"  class="input-floor" min="1" max="100" maxlength="2" placeholder="Этаж">
+          <input type="number" placeholder="Домофон"  maxlength="4" min="1" max="999" class="input-intercom">
          </div>
-    
-    </article>
+       </div>
+     </div>
+     <button class="btn-confirn">Оформить</button>
 
-    <article class="card">
-      <img src="img/items/3-2.png" alt="" class="img">
-      <p class="price">239₽</p>
-      <span class="name"> Жгучий хот-дог</span>
-       <div class="footer-card">
-         <span class="weight">245г </span>
-         <button class="btn-add">Добавить</button>
+          </form>
+        </div>
       </div>
- 
- </article>
+      </div>
+    <main>
+      <section class="navigation">
+        <div class="container">
+          <ul class="nav">
+            <li class="nav-item" data-tab="1">
+              <img src="img/icon/Бургеры.png" alt="" />
+              <span>Бургеры</span>
+            </li>
+            <li class="nav-item" data-tab="2">
+              <img src="img/icon/Закуски.png" alt="" />
+              <span>Закуски</span>
+            </li>
+            <li class="nav-item" data-tab="3">
+              <img src="img/icon/Хот-доги.png" alt="" />
+              <p>Хот-доги</p>
+            </li>
+            <li class="nav-item" data-tab="4">
+              <img src="img/icon/Комбо.png" alt="" />
+              <span>Комбо</span>
+            </li>
+            <li class="nav-item" data-tab="5">
+              <img src="img/icon/Шаурма.png" alt="" />
+              <span>Шаурма</span>
+            </li>
+            <li class="nav-item" data-tab="6">
+              <img src="img/icon/Пицца.png" alt="" />
+              <span>Пицца</span>
+            </li>
+            <li class="nav-item" data-tab="7">
+              <img src="img/icon/Вок.png" alt="" />
+              <span>Вок</span>
+            </li>
+            <li class="nav-item" data-tab="8">
+              <img src="img/icon/Десерты.png" alt="" />
+              <span>Десерты</span>
+            </li>
+            <li class="nav-item" data-tab="9">
+              <img src="img/icon/Соусы.png" alt="" />
+              <span>Соусы</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="wrapper"> 
+            <aside>
+              <div class="main-cart">
+                <button class="cart-btn">Корзина</button>
+                <span class="item-count">0</span>
+              </div>
+              <span class="main-cart-empty"> В корзине пока пусто :( </span>
+              <div class="content-cart hide">
+                <ul class="lists-item"></ul>
 
- <article class="card">
-  <img src="img/items/3-3.png" alt="" class="img">
-  <p class="price">220₽</p>
-  <span class="name">Классический хот-дог</span>
-   <div class="footer-card">
-     <span class="weight">215г </span>
-     <button  class="btn-add">Добавить</button>
-  </div>
-
-</article>
-
-
-    </div>
- </div>
- 
-
- <div class="tab-content " id="4">
-  <h2>Комбо</h2>
-  <div class="list-products">
-   <article class="card">
-       <h2>тут продуктов пока нет</h2>
-  
-  </article>
-
-
-  </div>
-</div>
-<div class="tab-content " id="5">
-  <h2>Шаурма</h2>
-  <div class="list-products">
-   <article class="card">
-       <h2>тут продуктов пока нет</h2>
-  
-  </article>
-
-
-  </div>
-</div>
-
-<div class="tab-content " id="6">
-  <h2>Пицца</h2>
-  <div class="list-products">
-   <article class="card">
-       <h2>тут продуктов пока нет</h2>
-  
-  </article>
-
-
-  </div>
-</div>
-
-<div class="tab-content " id="7">
-  <h2>Вок</h2>
-  <div class="list-products">
-   <article class="card">
-       <h2>тут продуктов пока нет</h2>
-  
-  </article>
-
-
-  </div>
-</div>
-
-<div class="tab-content " id="8">
-  <h2>Десерты</h2>
-  <div class="list-products">
-   <article class="card">
-       <h2>тут продуктов пока нет</h2>
-  
-  </article>
-
-
-  </div>
-</div>
-
-<div class="tab-content " id="9">
-  <h2>Комбо</h2>
-  <div class="list-products">
-   <article class="card">
-       <h2>тут продуктов пока нет</h2>
-  
-  </article>
-
-
-  </div>
-</div>
-
-</main>
-
-
-<footer>
-<div class="default-footer">
-  <div class="main-footer">
-    <img src="img/footer-logo.png" alt="">
-    <span class="autor">© YouMeal, 2022 <br>
-        Design: Anastasia Ilina</span>
-</div>
-<div class="contact-section">
-  <h2>Номер для заказа</h2>
-  <div class="links-footer">
-    <img src="img/icon/Call.png" alt=""> <a href="tel:+7(930)833-38-11">+7(930)833-38-11</a>
-
-  </div>
-</div>
-
-<div class="footer-links">
-  <h2>Мы в соцсетях</h2>
-<div class="group-links">
-  <a href="https://web.telegram.org/"><img src="img/icon/bi_telegram.png" alt=""></a>
-  <a href="https://vk.com/"><img src="img/icon/vk.png" alt=""></a>
-</div>
-
-</div>
-<span class="autor-m">© YouMeal, 2022 <br>
-  Design: Anastasia Ilina</span>
-</div>
-
-<div class="tablet-footer">
-  <div class="main-tablet-footer">
- <div> <img src="img/footer-logo.png" alt=""></div>
-    <div>   <a href="tel:+79308333811">   <img src="img/icon/Call.png" alt=""> +7(930)833-38-11</a>
-    </div>
- <div>
-  
-  <span class="autor">© YouMeal, 2022 <br>
-    Design: Anastasia Ilina</span>
- </div>
-  </div>
-  <div class="group-links-tablet ">
-    <h2>Мы в соцсетях</h2>
-    <a href="https://web.telegram.org/"><img src="img/icon/bi_telegram.png" alt=""></a>
-    <a href="https://vk.com/"><img src="img/icon/vk.png" alt=""></a>
-  </div>
-</div>
-</footer>
-
-<script src="app.js"></script>
-</body>
+                <div class="cart-group">
+                  <div class="count-section">
+                    <span>Итого</span>
+                    <span class="price-count">0 <span>₽</span></span>
+                  </div>
+                  <button class="btn-checkout " data-disabled="disabled">Оформить Заказ</button>
+                  <div class="cart-content-group">
+                    <img src="img/icon/delivery.png" alt="" />
+                    <span>Бесплатная Доставка</span>
+                    <button class="btn-hide">Свернуть</button>
+                  </div>
+                </div>
+              </div>
+            </aside>
+              <div class="tab-content active" id="1">
+                <h2>Бургеры</h2>
+                <ul class="list-products">
+                  <li class="card">
+                    <img src="img/items/1-1.png" alt="" class="img" />
+                    <h3 class="price">689₽</h3>
+                    <h4 class="name">Мясная бомба</h4>
+                    <div class="card-sub-group">
+                      <h5 class="weight">520г</h5>
+                      <button class="btn-add">Добавить</button>
+                    </div>
+                  </li>  
+                  <li class="card">
+                    <img src="img/items/1-2.png" alt="" class="img" />
+                    <h3 class="price">550₽</h3>
+                    <h4 class="name">Супер сырный</h4>
+                    <div class="card-sub-group">
+                      <h5 class="weight">512г</h5>
+                      <button class="btn-add">Добавить</button>
+                    </div>
+                  </li>  
+                  <li class="card">
+                      <img src="img/items/1-3.png" alt="" class="img" />
+                      <h3 class="price">639₽</h5>
+                      <h4 class="name">Сытный</h4>
+                    <div class="card-sub-group">
+                      <h5 class="weight">580г</h5>
+                      <button class="btn-add">Добавить</button>
+                    </div>
+                  </li>  
+                  <li class="card">
+                    <img src="img/items/1-4.png" alt="" class="img" />
+                    <h3 class="price">480₽</h3>
+                    <h4 class="name">Тяжелый удар</h4>
+                    <div class="card-sub-group">
+                      <h5 class="weight">470г</h5>
+                      <button class="btn-add">Добавить</button>
+                    </div>
+                  </li> 
+                  <li class="card">
+                    <img src="img/items/1-5.png" alt="" class="img" />
+                    <h3 class="price">450₽</h3>
+                    <h4 class="name">Вечная классика</h4>
+                    <div class="card-sub-group">
+                      <h5 class="weight">450г</h5>
+                      <button class="btn-add">Добавить</button>
+                    </div>
+                  </li>  
+                  <li class="card">
+                    <img src="img/items/1-6.png" alt="" class="img" />
+                    <h3 class="price">560₽</h3>
+                    <h4 class="name">Итальянский</h4>
+                    <div class="card-sub-group">
+                      <h5 class="weight">510г</h5>
+                      <button class="btn-add">Добавить</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content" id="2">
+                <h2>Закуски</h2>
+                <ul class="list-products">
+                  <li class="card">
+                    <img src="img/items/2-1.png" alt="" class="img" />
+                    <h3 class="price">250₽</h3>
+                    <h4 class="name">Начос</h4>
+                    <div class="card-sub-group">
+                      <h5 class="weight">220г</h5>
+                      <button class="btn-add">Добавить</button>
+                      <li class="card">
+                        <img src="img/items/2-2.png" alt="" class="img" />
+                        <h3 class="price">245₽</h3>
+                        <h4 class="name">Картошка фри</h4>
+                        <div class="card-sub-group">
+                          <h5 class="weight">180г</h5>
+                          <button class="btn-add">Добавить</button>
+                        </div>
+                      </li>
+                  </li>     
+                      <li class="card">
+                        <img src="img/items/2-3.png" alt="" class="img" />
+                        <h3 class="price">230₽</h3>
+                        <h4 class="name">Луковые кольца</h4>
+                        <div class="card-sub-group">
+                          <h5 class="weight">160г</h5>
+                          <button class="btn-add">Добавить</button>
+                        </div>
+                      </li>
+                    </ul>                
+                </div>
+              <div class="tab-content" id="3">
+                <h2>Хот-доги</h2>
+                <div class="list-products">
+                  <li class="card">
+                    <img src="img/items/3-1.png" alt="" class="img" />
+                    <h3 class="price">290₽</h3>
+                    <h4 class="name">Домашний хот-дог</h4>
+                    <div class="card-sub-group">
+                      <h5 class="weight">250г</h5>
+                      <button class="btn-add">Добавить</button>
+                    </div>
+                  </li>
+                    <li class="card">
+                    <img src="img/items/3-2.png" alt="" class="img" />
+                    <h3 class="price">239₽</h3>
+                    <h4 class="name"> Жгучий хот-дог</h4>
+                    <div class="card-sub-group">
+                      <h5 class="weight">245г </h5>
+                      <button class="btn-add">Добавить</button>
+                    </div>
+                  </li>  
+                  <li class="card">
+                    <img src="img/items/3-3.png" alt="" class="img" />
+                    <h3 class="price">220₽</h3>
+                    <h4 class="name">Классический хот-дог</span>
+                    <div class="card-sub-group">
+                      <h5 class="weight">215г </h5>
+                      <button class="btn-add">Добавить</button>
+                    </div>
+                  </li>
+                </div>
+              </div>  
+              <div class="tab-content" id="4">
+                <h2>Комбо</h2>
+                <div class="list-products">
+                  <li class="card">
+                    <h2>тут продуктов пока нет</h2>
+                  </li>
+                </div>
+              </div>
+              <div class="tab-content" id="5">
+                <h2>Шаурма</h2>
+                <div class="list-products">
+                  <li class="card">
+                    <h2>тут продуктов пока нет</h2>
+                  </li>
+                </div>
+              </div>  
+              <div class="tab-content" id="6">
+                <h2>Пицца</h2>
+                <div class="list-products">
+                  <li class="card">
+                    <h2>тут продуктов пока нет</h2>
+                  </li>
+                </div>
+              </div>  
+              <div class="tab-content" id="7">
+                <h2>Вок</h2>
+                <div class="list-products">
+                  <li class="card">
+                    <h2>тут продуктов пока нет</h2>
+                  </li>
+                </div>
+              </div>  
+              <div class="tab-content" id="8">
+                <h2>Десерты</h2>
+                <div class="list-products">
+                  <li class="card">
+                    <h2>тут продуктов пока нет</h2>
+                  </li>
+                </div>
+              </div>  
+              <div class="tab-content" id="9">
+                <h2>Комбо</h2>
+                <div class="list-products">
+                  <li class="card">
+                    <h2>тут продуктов пока нет</h2>
+                  </li>
+                </div>
+              </div>
+              </div>          
+          </div>       
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-items">
+          <img src="img/footer-logo.png" alt="" class="footer-items">
+          <div class="phone-section">
+            <h4>Номер для заказа</h4> 
+            <div class="phone-area">
+              <img src="img/icon/Call.png" alt="">  <a href="tel:+79308333811"> +7(930)833-38-11</a>
+            
+            </div>
+          </div>
+          <div class="link-section">
+            <h4>Мы в соцсеятх</h4>
+            <div class="group-links">
+              <img src="img/icon/bi_telegram.png" alt=""> <a href=""></a>
+              <img src="img/icon/vk.png" alt="">  <a href=""></a>
+            </div>
+          </div>
+       <div class="desinger">
+        <span>© YouMeal, 2022</span> <br>
+        <span>Design: Anastasia Ilina</span>
+       </div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
 </html>
