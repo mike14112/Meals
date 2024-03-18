@@ -92,7 +92,6 @@ input[type="number"] {
   padding: 44px 24px;
 }
 
-
 .form {
   height: 100%;
   display: flex;
@@ -528,7 +527,7 @@ aside {
   .form-modal {
     height: 100%;
   }
-  .form-title{
+  .form-title {
     margin-left: 22px;
   }
   .side-modal {

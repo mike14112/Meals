@@ -20,10 +20,10 @@ const btnBasket = document.querySelector(".cart-btn"),
   btnHIde = document.querySelector(".btn-hide");
 const btnCheckout = document.querySelector(".btn-checkout");
 
-/// Items
+// Items
 const cards = document.querySelectorAll(".card");
 
-/////////// tabs
+// tabs
 
 btnTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -55,7 +55,7 @@ const addTocart = (obj) => {
   renderCart(products);
 };
 
-//  //show & hide   basket with button
+//show & hide   basket with button
 
 btnHIde.addEventListener("click", () => {
   mainCart.classList.toggle("hide");
@@ -176,7 +176,7 @@ const decreaseCount = (arr, btnMinus) => {
   });
 };
 
-///show & hide modal
+//show & hide modal
 
 btnCheckout.addEventListener("click", () => {
   if (products.length !== 0) {
@@ -202,7 +202,7 @@ btnsRadio.forEach((btn) => {
   });
 });
 
-// Placing an order
+//Placing an order
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
