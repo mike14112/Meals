@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-    <div class="modal bg-black  w-full h-full z-20 fixed left-2/4 top-2/4 translate-x-[-50%] translate-y-[-50%] md:ml-[-8%]  sm:top-[40%]"
+    <div class="modal bg-black  w-full h-full z-20 fixed left-2/4 top-2/4 translate-x-[-50%] translate-y-[-50%]  sm:top-[40%] "
         v-if="showIsModal">
         <div
             class="modal-window relative flex w-[42.8rem] h-[29rem] bg-white mt-24 mx-auto rounded-3xl sm:w-full sm:h-full sm:py-8 sm:px-2.5 sm:flex sm:flex-col sm:items-center  ">
@@ -56,7 +56,8 @@ export default {
                         </div>
                     </div>
                     <button
-                        class="btn-confirn mt-8 py-3 px-28 text-white rounded-xl w-80 hover:bg-[#ffab08]">Оформить</button>
+                        class="btn-confirn bg-[#FF7020] mt-8 py-3 px-28 text-white rounded-xl w-80 hover:bg-[#ffab08]">
+                        Оформить</button>
                 </form>
             </div>
         </div>

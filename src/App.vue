@@ -15,7 +15,7 @@ export default {
     data() {
         return {
             items: burger,
-            showIsModal: false
+            showIsModal: true
         }
     },
     methods: {
