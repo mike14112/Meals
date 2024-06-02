@@ -5,14 +5,13 @@ export default {
         showIsModal: {
             type: Boolean,
             required: true
-        }
+        },
     },
     methods: {
         closeModal() {
             this.$emit('modalClose')
         }
-    }
-
+    },
 }
 </script>
 

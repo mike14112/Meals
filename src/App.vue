@@ -15,7 +15,11 @@ export default {
     data() {
         return {
             items: burger,
-            showIsModal: true
+            showIsModal: false,
+            isVisibleCart: false,
+            cartItems: [],
+            cartItem: {}
+
         }
     },
     methods: {
@@ -24,10 +28,38 @@ export default {
         },
         openModal() {
             this.showIsModal = !this.showIsModal
+        },
+        addItem(id) {
+            const cartItemIndex = this.cartItems.findIndex(item => item.id === id)
+            this.isVisibleCart = true
+
+            if (cartItemIndex === -1) {
+                this.cartItem = this.items.find(item => item.id === id);
+                this.cartItem.count = 1
+                this.cartItems.push(this.cartItem)
+            } else {
+                this.cartItems.forEach((item) => {
+                    if (item.id == id) {
+                        item.count++
+                    }
+                })
+
+            }
+
+        },
+        decrementCount(cartItem) {
+            cartItem.count--
+            if (cartItem.count < 1) {
+                const index = this.cartItems.findIndex(item => item.id === cartItem.id);
+                if (index !== -1) {
+                    this.cartItems.splice(index, 1);
+                }
+            }
+        },
+        incrementCount(cartItem) {
+            cartItem.count++
         }
-
-    }
-
+    },
 }
 </script>
 
@@ -40,8 +72,9 @@ export default {
         <section>
             <div class="container">
                 <div class="wrapper">
-                    <AppBasket @showModal="openModal" />
-                    <ListItems :item="items" />
+                    <AppBasket @showModal="openModal" :cartItems="cartItems" :isVisibleCart="isVisibleCart"
+                        @decrement="decrementCount" @increment="incrementCount" />
+                    <ListItems :item="items" @add="addItem" />
                 </div>
             </div>
         </section>

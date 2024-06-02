@@ -49,11 +49,11 @@ export default {
   <li
     class="carl  max-w-[20rem] bg-white  p-3  rounded-[1rem] flex flex-col box-border  justify-around md:w-[9.5rem]  md:p-1 sm:w-[9.3rem]">
     <img :src="src" alt="" class="img  w-72 h-56  mb-4  md:w-[9.75rem] md:h-[7.5rem] sm:w-[8.5rem] sm:h-[7.5rem] " />
-    <h3 class="price mb-2">{{ price }}₽</h3>
+    <h3 class="price mb-2"> {{ price }}₽</h3>
     <h4 class="name">{{ title }}</h4>
     <div class=" flex flex-col align-center mt-8  w-[17rem] md:w-[5.5rem]  sm:w-[8rem] ">
       <h5 class="weight  text-gray-500">{{ weigth }}г </h5>
-      <AddBtn v-on:click="addItem">Добавить</AddBtn>
+      <AddBtn @click="addItem">Добавить</AddBtn>
     </div>
   </li>
 

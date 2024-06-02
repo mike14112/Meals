@@ -1,56 +1,101 @@
 <script>
-export default {
 
+export default {
+    emits: ['decrement', 'increment'],
+    props: {
+        cartItems: {
+            type: Array,
+            required: true,
+        },
+        isVisibleCart: {
+            type: Boolean,
+            required: true,
+
+        }
+    },
+    data() {
+        return {
+            cartItems: this.cartItems,
+            isVisible: this.isVisibleCart,
+        }
+    },
 
     methods: {
         openModal() {
             this.$emit('showModal')
+        },
+        changeVisibleCart() {
+            this.isVisible = !this.isVisible
+        },
+        decrementCount(cartItem) {
+            this.$emit('decrement', cartItem)
+
+        },
+        incrementCount(cartItem) {
+            this.$emit('increment', cartItem)
+
         }
-    }
+    },
+    computed: {
+        totalPice() {
+            return this.cartItems.reduce((acc, item) => {
+                return acc += parseInt(item.price) * parseInt(item.count)
+            }, 0)
+
+        },
+    },
+
+
+
+
 }
+
 </script>
 
 <template>
-    <aside class="aside bg-white  py-6 px-4 min-w-72 max-h-28 mt-16 md:absolute md:z-10 md:mt-[-1.5rem] rounded-xl ">
+    <aside class="aside bg-white   py-6 px-4 min-w-72 min-h-28 mt-16 md:absolute md:z-10 md:mt-[-1.5rem] rounded-xl   ">
         <div class="main-cart flex justify-around">
-            <button class="cart-btn py-1 px-4 text-2xl font-black bg-white">Корзина</button>
-            <span class="item-count bg-white pt-2 px-4 pb-1 rounded-md">0</span>
+            <button class="cart-btn py-1 px-4 text-2xl font-black bg-white"
+                @:click="isVisible = !isVisible">Корзина</button>
+            <span class="item-count bg-[#f2f2f3] py-2 px-4 rounded-xl text-center">{{ cartItems.length
+                }}</span>
         </div>
-        <span class="main-cart-empty"> В корзине пока пусто :( </span>
-        <div class="content-cart hide mt-4">
-            <ul class="lists-item flex flex-col">
-                <li class="border-t border-[#f2f2f3] pt-4 flex items-center justify-between h-20">
-                    <img alt="" class="h-[3.4rem] w-16">
+        <div class="content-cart  text-xs  text-nowrap mt-4 " v-if="isVisible">
+            <ul class="lists-item  flex flex-col  gap-[2rem]">
+                <li class="border-t border-[#f2f2f3]   flex justify-between items-center  pt-2.5 px-4 pb-0.5 h-20"
+                    v-for="cartItem in cartItems" :key="cartItem.id">
+                    <img :src="cartItem.src" alt="" class="h-[3.4rem] w-16">
                     <div class="item-descr flex flex-col ml-1.5  ">
-                        <span class="mt-1.5">${item.name}</span>
-                        <span class="weight mt-1 ">${item.weight}г</span>
-                        <span class="mt-1.5">${item.price}₽</span>
+                        <span class="mt-1.5">{{ cartItem.title }}</span>
+                        <span class="weight mt-1 decoration-grey ">{{ cartItem.weigth }} г</span>
+                        <span class="mt-1.5">{{ cartItem.price }}₽</span>
                     </div>
                     <div
                         class="item-section bg-[#f2f2f3] py-2 px-3 rounded-2xl min-w-20 min-h-8 flex justify-around items-center mt-1.5 ml-6">
-                        <button class="btn-minus border-none bg-[#f2f2f3]" data-index="${idx}">-</button>
-                        <span class="item-count">${item.count}</span>
-                        <button class="btn-plus border-none bg-[#f2f2f3]" data-index="${idx}">+</button>
+                        <button class="btn-minus border-none bg-[#f2f2f3]" @:click="decrementCount(cartItem)">-</button>
+                        <span class="item-count">{{ cartItem.count }}</span>
+                        <button class="btn-plus border-none bg-[#f2f2f3]" @:click="incrementCount(cartItem)">+</button>
                     </div>
                 </li>
             </ul>
             <div class="cart-group flex flex-col justify-around">
-                <div
-                    class="count-section flex justify-between  items-baseline mt-3 mb-5 mr-0 ml-0 text-base font-bold ">
+                <div class="count-section flex justify-between  items-baseline mt-3 mb-5 mr-0 ml-0 text-base font-bold "
+                    showcart>
                     <span>Итого</span>
-                    <span class="price-count">0 <span>₽</span></span>
+                    <span class="price-count">
+                        {{ totalPice }} <span>₽</span></span>
                 </div>
-                <button
-                    class="btn-checkout py-3 px-[4.5rem] rounded-2xl bg-[#ff7020] text-white hover:cursor-pointer bg-[#ffab08]"
-                    data-disabled="disabled" @click="openModal">Оформить
+                <button class=" btn-checkout py-3 px-[4.5rem] rounded-2xl bg-[#ff7020] text-white hover:cursor-pointer
+                        hover:bg-[#ffab08]" data-disabled="disabled" @click="openModal">Оформить
                     Заказ</button>
                 <div class="cart-content-group flex justify-around items-center mt-2 ">
                     <img src="../../img/icon/delivery.png" alt="" />
                     <span>Бесплатная Доставка</span>
-                    <button class="btn-hide bg-white text-[#b1b1b1]">Свернуть</button>
+                    <button class="btn-hide bg-white text-[#b1b1b1]" @:click="isVisible = !isVisible">Свернуть</button>
                 </div>
             </div>
         </div>
+        <span class="main-cart-empty" v-else> В корзине пока пусто :( </span>
     </aside>
 </template>
 
