@@ -27,11 +27,16 @@ export default {
             this.showIsModal = !this.showIsModal
         },
         openModal() {
-            this.showIsModal = !this.showIsModal
+            if (this.cartItems.length > 0) {
+                this.showIsModal = true
+            } else {
+                this.showIsModal = false
+            }
         },
         addItem(id) {
             const cartItemIndex = this.cartItems.findIndex(item => item.id === id)
             this.isVisibleCart = true
+
 
             if (cartItemIndex === -1) {
                 this.cartItem = this.items.find(item => item.id === id);

@@ -1,7 +1,7 @@
 <script>
 
 export default {
-    emits: ['decrement', 'increment'],
+    emits: ['decrement', 'increment', 'showModal'],
     props: {
         cartItems: {
             type: Array,
@@ -15,7 +15,7 @@ export default {
     },
     data() {
         return {
-            cartItems: this.cartItems,
+            basketItems: this.cartItems,
             isVisible: this.isVisibleCart,
         }
     },
@@ -31,9 +31,8 @@ export default {
             this.$emit('decrement', cartItem)
 
         },
-        incrementCount(cartItem) {
-            this.$emit('increment', cartItem)
-
+        incrementCount(basketItem) {
+            this.$emit('increment', basketItem)
         }
     },
     computed: {
@@ -46,8 +45,6 @@ export default {
     },
 
 
-
-
 }
 
 </script>
@@ -57,24 +54,26 @@ export default {
         <div class="main-cart flex justify-around">
             <button class="cart-btn py-1 px-4 text-2xl font-black bg-white"
                 @:click="isVisible = !isVisible">Корзина</button>
-            <span class="item-count bg-[#f2f2f3] py-2 px-4 rounded-xl text-center">{{ cartItems.length
+            <span class="item-count bg-[#f2f2f3] py-2 px-4 rounded-xl text-center">{{ basketItems.length
                 }}</span>
         </div>
         <div class="content-cart  text-xs  text-nowrap mt-4 " v-if="isVisible">
             <ul class="lists-item  flex flex-col  gap-[2rem]">
                 <li class="border-t border-[#f2f2f3]   flex justify-between items-center  pt-2.5 px-4 pb-0.5 h-20"
-                    v-for="cartItem in cartItems" :key="cartItem.id">
-                    <img :src="cartItem.src" alt="" class="h-[3.4rem] w-16">
+                    v-for="basketItem in basketItems" :key="basketItem.id">
+                    <img :src="basketItem.src" alt="" class="h-[3.4rem] w-16">
                     <div class="item-descr flex flex-col ml-1.5  ">
-                        <span class="mt-1.5">{{ cartItem.title }}</span>
-                        <span class="weight mt-1 decoration-grey ">{{ cartItem.weigth }} г</span>
-                        <span class="mt-1.5">{{ cartItem.price }}₽</span>
+                        <span class="mt-1.5">{{ basketItem.title }}</span>
+                        <span class="weight mt-1 decoration-grey ">{{ basketItem.weigth }} г</span>
+                        <span class="mt-1.5">{{ basketItem.price }}₽</span>
                     </div>
                     <div
                         class="item-section bg-[#f2f2f3] py-2 px-3 rounded-2xl min-w-20 min-h-8 flex justify-around items-center mt-1.5 ml-6">
-                        <button class="btn-minus border-none bg-[#f2f2f3]" @:click="decrementCount(cartItem)">-</button>
-                        <span class="item-count">{{ cartItem.count }}</span>
-                        <button class="btn-plus border-none bg-[#f2f2f3]" @:click="incrementCount(cartItem)">+</button>
+                        <button class="btn-minus border-none bg-[#f2f2f3]"
+                            @:click="decrementCount(basketItem)">-</button>
+                        <span class="item-count">{{ basketItem.count }}</span>
+                        <button class="btn-plus border-none bg-[#f2f2f3]"
+                            @:click="incrementCount(basketItem)">+</button>
                     </div>
                 </li>
             </ul>
@@ -86,7 +85,7 @@ export default {
                         {{ totalPice }} <span>₽</span></span>
                 </div>
                 <button class=" btn-checkout py-3 px-[4.5rem] rounded-2xl bg-[#ff7020] text-white hover:cursor-pointer
-                        hover:bg-[#ffab08]" data-disabled="disabled" @click="openModal">Оформить
+                        hover:bg-[#ffab08]" @click="openModal">Оформить
                     Заказ</button>
                 <div class="cart-content-group flex justify-around items-center mt-2 ">
                     <img src="../../img/icon/delivery.png" alt="" />
