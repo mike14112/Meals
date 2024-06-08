@@ -1,0 +1,34 @@
+
+[
+    {
+      "id": 1,
+      "categoryId":3,
+      "title":"Домашний хот-дог",
+      "price": 290,
+      "weigth":250,
+      "src":"/img/items/3-1.png",
+      "nameCategory":"Хот-доги"
+
+    },
+
+  {
+    "id":2,
+    "category-id":3,
+    "title":"Жгучий Хот-дог",
+    "price":239,
+    "weigth":245,
+    "src":"/img/items/3-2.png",
+    "nameCategory":"Хот-доги"
+
+  },
+  {
+    "id": 3,
+    "categoryId":3,
+    "title": "Классический Хот-дог",
+    "price": 220,     
+    "weigth":215,
+    "src":"/img/items/3-3.png",
+    "nameCategory":"Хот-доги"
+
+  }
+]

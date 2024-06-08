@@ -11,6 +11,7 @@ item:{
 <script>
 import AddBtn from './AddBtn.vue';
 export default {
+  emits: ['add'],
   components: { AddBtn },
   props: {
     src: {
@@ -36,13 +37,13 @@ export default {
 
 
   },
-  emits: ['add'],
   methods: {
     addItem() {
-      this.$emit('add', this.id)
+      this.$emit('add', this.title)
     },
 
   },
+
 }
 </script>
 <template>
@@ -53,7 +54,7 @@ export default {
     <h4 class="name">{{ title }}</h4>
     <div class=" flex flex-col align-center mt-8  w-[17rem] md:w-[5.5rem]  sm:w-[8rem] ">
       <h5 class="weight  text-gray-500">{{ weigth }}г </h5>
-      <AddBtn @click="addItem">Добавить</AddBtn>
+      <AddBtn v-on:click="addItem">Добавить</AddBtn>
     </div>
   </li>
 

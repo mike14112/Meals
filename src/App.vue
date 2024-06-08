@@ -6,15 +6,16 @@ import AppBasket from "./components/AppBasket.vue"
 import ListItems from "./components/ListItems.vue";
 import AppFooter from "./components/AppFooter.vue"
 import AppModal from "./components/AppModal.vue"
-import burger from '../public/burger.json'
-import snacks from '../public/snacks.json'
-import hotDog from '../public/hot-dog.json'
+import burger from '../src/burger.json'
+import snacks from '../src/snacks.json'
+import hotDog from '../src/hot-dog.json'
 
 export default {
     components: { AppHeader, AppPromo, AppNav, AppBasket, ListItems, AppFooter, AppModal },
     data() {
         return {
-            items: burger,
+            currentTab: 0,
+            currentItems: burger,
             showIsModal: false,
             isVisibleCart: false,
             cartItems: [],
@@ -33,18 +34,17 @@ export default {
                 this.showIsModal = false
             }
         },
-        addItem(id) {
-            const cartItemIndex = this.cartItems.findIndex(item => item.id === id)
+        addItem(title) {
+            const cartItemIndex = this.cartItems.findIndex(item => item.title === title)
             this.isVisibleCart = true
-
-
             if (cartItemIndex === -1) {
-                this.cartItem = this.items.find(item => item.id === id);
-                this.cartItem.count = 1
+                this.cartItem = this.currentItems.find(item => item.title === title);
                 this.cartItems.push(this.cartItem)
+                console.log(this.items)
+                this.cartItem.count = 1
             } else {
                 this.cartItems.forEach((item) => {
-                    if (item.id == id) {
+                    if (item.title == title) {
                         item.count++
                     }
                 })
@@ -63,8 +63,15 @@ export default {
         },
         incrementCount(cartItem) {
             cartItem.count++
+        },
+        changeTab(dataId) {
+            const items2 = [burger, snacks, hotDog]
+            this.currentTab = +dataId
+            this.currentItems = items2[this.currentTab]
+            console.log(this.currentItems)
         }
     },
+
 }
 </script>
 
@@ -73,13 +80,13 @@ export default {
     <AppPromo />
     <AppModal :showIsModal="showIsModal" @modal-Close="closeModal" />
     <main>
-        <AppNav />
+        <AppNav @dataTab="changeTab" />
         <section>
             <div class="container">
                 <div class="wrapper">
                     <AppBasket @showModal="openModal" :cartItems="cartItems" :isVisibleCart="isVisibleCart"
                         @decrement="decrementCount" @increment="incrementCount" />
-                    <ListItems :item="items" @add="addItem" />
+                    <ListItems :items="currentItems" @add="addItem" />
                 </div>
             </div>
         </section>

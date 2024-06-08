@@ -37,12 +37,14 @@ export default {
     },
     computed: {
         totalPice() {
-            return this.cartItems.reduce((acc, item) => {
+            return this.basketItems.reduce((acc, item) => {
                 return acc += parseInt(item.price) * parseInt(item.count)
             }, 0)
 
         },
+
     },
+
 
 
 }

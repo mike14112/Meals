@@ -1,0 +1,72 @@
+
+[
+    {
+      "id": 1,
+      "category-id":1,
+      "title": "Мясная бомба",
+      "price": 689,
+      "weigth":520,
+      "src":"/img/items/1-1.png",
+      "nameCategory":"Бургеры"
+    },
+
+  {
+    "id":2,
+    "category-id":1,
+    "title":"Супер сырный",
+    "price":550,
+    "weigth":512,
+    "src":"/img/items/1-2.png",
+    "nameCategory":"Бургеры"
+
+
+  },
+  {
+    "id": 3,
+    "category-id":1,
+    "title": "Сытный",
+    "price": 689,     
+    "weigth":520,
+    "src":"/img/items/1-3.png",
+    "nameCategory":"Бургеры"
+
+
+  },
+
+{
+  "id":4,
+  "category-id":1,
+  "title":"Тяжелый удар",
+  "price":639,
+  "weigth":580,
+  "src":"/img/items/1-4.png",
+  "nameCategory":"Бургеры"
+
+
+},
+{
+   "id": 5, 
+   "category-id":1,
+    "title": "Вечная классика",
+    "price": 470,
+    "weigth":520,
+    "src":"/img/items/1-5.png",
+    "nameCategory":"Бургеры"
+
+
+  },
+
+{
+  "id":6,
+  "category-id":1,
+  "title":"Итальянский",
+  "price":450,
+  "weigth":450,
+  "src":"/img/items/1-6.png",
+  "nameCategory":"Бургеры"
+
+
+}
+
+  ]
+  

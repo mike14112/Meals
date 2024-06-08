@@ -1,6 +1,11 @@
 <script>
 export default {
-
+    emits: ['dataTab'],
+    methods: {
+        getTab(event) {
+            this.$emit('dataTab', event.currentTarget.getAttribute('data-tab'))
+        }
+    }
 }
 </script>
 
@@ -8,51 +13,60 @@ export default {
     <section class="navigation py-[4rem]">
         <div class="container">
             <ul class="nav flex  overflow-x-scroll gap-6">
-                <li class="nav-item flex justify-center items-center   py-1 w-96 px-3  border-white bg-white  rounded-[3.125rem] gap-2 md:gap-3   cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
-                    data-tab="1 ">
+                <button
+                    class="nav-item flex justify-center items-center   py-1 w-96 px-3  border-white bg-white  rounded-[3.125rem] gap-2 md:gap-3   cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
+                    :data-tab="0" @:click="getTab">
                     <img src="../../../img/icon/Бургеры.png" alt="" />
                     <span>Бургеры</span>
-                </li>
-                <li class="nav-item flex justify-center items-center  py-1 w-96 px-3  border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3    cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
-                    data-tab="3">
+                </button>
+                <button
+                    class="nav-item flex justify-center items-center  py-1 w-96 px-3  border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3    cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
+                    :data-tab="1" @:click="getTab">
                     <img src="../../../img/icon/Закуски.png" alt="" />
                     <span>Закуски</span>
-                </li>
-                <li class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3   cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
-                    data-tab="3">
+                </button>
+                <button
+                    class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3   cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
+                    :data-tab="2" @:click="getTab">
                     <img src="../../../img/icon/Хот-доги.png" alt="" />
                     <p>Хот-доги</p>
-                </li>
-                <li class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3  cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
-                    data-tab="4">
+                </button>
+                <button
+                    class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3  cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
+                    :data-tab="3" @:click="getTab">
                     <img src="../../../img/icon/Комбо.png" alt="" />
                     <span>Комбо</span>
-                </li>
-                <li class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3  cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
-                    data-tab="5">
+                </button>
+                <button
+                    class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3  cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
+                    :data-tab="4" @:click="getTab">
                     <img src="../../../img/icon/Шаурма.png" alt="" />
                     <span>Шаурма</span>
-                </li>
-                <li class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3  cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
-                    data-tab="6">
+                </button>
+                <button
+                    class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3  cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
+                    :data-tab="5" @:click="getTab">
                     <img src="../../../img/icon/Пицца.png" alt="" />
                     <span>Пицца</span>
-                </li>
-                <li class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3 cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
-                    data-tab="7">
+                </button>
+                <button
+                    class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3 cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
+                    :data-tab="6" @:click="getTab">
                     <img src="../../../img/icon/Вок.png" alt="" />
                     <span>Вок</span>
-                </li>
-                <li class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3  cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
-                    data-tab="8">
+                </button>
+                <button
+                    class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3  cursor-pointer whitespace-nowrap hover:bg-[#ffab08] "
+                    :data-tab="7" @:click="getTab">
                     <img src="../../../img/icon/Десерты.png" alt="" />
                     <span>Десерты</span>
-                </li>
-                <li class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3  cursor-pointer whitespace-nowrap hover:bg-[#ffab08]"
-                    data-tab="9">
+                </button>
+                <button
+                    class="nav-item flex justify-center items-center py-1 w-96 px-3 border-white bg-white p rounded-[3.125rem] gap-2 md:gap-3  cursor-pointer whitespace-nowrap hover:bg-[#ffab08]"
+                    :data-tab="8" @:click="getTab">
                     <img src="../../../img/icon/Соусы.png" alt="" />
                     <span>Соусы</span>
-                </li>
+                </button>
             </ul>
         </div>
     </section>
@@ -74,9 +88,9 @@ export default {
 /* .nav-item flex justify-center items-center {
     display: flex;
     justify-justify: center;
-    align-items: center;
+    abuttongn-items: center;
     padding: 4px 12px;
-    border: white 1px solid;
+    border: white 1px sobuttond;
     background-color: white;
     border-radius: 50px;
     gap: 8px;

@@ -1,0 +1,34 @@
+[
+    {
+      "id": 1,
+      "category-id":2,
+      "title": "Начос",
+      "price": 250,
+      "weigth":220,
+      "src":"/img/items/2-1.png",
+      "nameCategory":"Закуски"
+
+    },
+
+  {
+    "id":2,
+    "category-id":2,
+    "title":"Картошка фри",
+    "price":245,
+    "weigth":180,
+    "src":"/img/items/2-2.png",
+    "nameCategory":"Закуски"
+
+
+  },
+  {
+    "id": 3,
+    "category-id":2,
+    "title": "Луковые кольца",
+    "price": 230,
+    "weigth":160,
+    "src":"/img/items/2-3.png",
+    "nameCategory":"Закуски"
+
+  }
+]
