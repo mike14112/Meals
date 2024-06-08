@@ -7,7 +7,7 @@ export default {
     props: {
         items: {
             type: Array,
-            required: true
+            required: true,
         },
 
     },
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-    <div class="tab-content  flex  flex-col gap-8 md:mt-32  md:gap-6 " v-if="items.length > 0">
+    <div class="tab-content  flex  flex-col gap-8 md:mt-32  md:gap-6 " v-if="items != undefined">
         <h2 class="text-[2.5rem] font-bold">{{ items[0].nameCategory }}</h2>
         <ul class=" list-products grid grid-cols-3 gap-8 lg:grid-cols-2 md:grid-cols-4 md:gap-5 sm:grid-cols-2
             sm:gap-2.5 ">
@@ -31,8 +31,8 @@ export default {
 
         </ul>
     </div>
-    <div v-else>
-        <p>dsada</p>
+    <div class="tab-content  flex  flex-col gap-8 md:mt-32  md:gap-6  " v-else>
+        <h2 class="text-[2.5rem] font-bold">Продуктов пока нет </h2>
     </div>
 </template>
 

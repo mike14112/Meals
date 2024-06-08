@@ -68,7 +68,6 @@ export default {
             const items2 = [burger, snacks, hotDog]
             this.currentTab = +dataId
             this.currentItems = items2[this.currentTab]
-            console.log(this.currentItems)
         }
     },
 
