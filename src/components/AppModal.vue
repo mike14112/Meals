@@ -1,7 +1,7 @@
 <script>
 
 export default {
-    emits: ['checkout'],
+    emits: ['createOrder', 'modalClose'],
     props: {
         showIsModal: {
             type: Boolean,
@@ -26,31 +26,32 @@ export default {
         closeModal() {
             this.$emit('modalClose')
         },
-        orderCheckout() {
-            const checkout = {}
+        orderorder() {
+            const order = {}
             if (this.order.isTake == 'pickup' && this.order.name.length >= 3 && this.order.phone >= 8) {
-                checkout.id = Math.floor(Math.random() * 22)
-                checkout.IsTake = this.order.isTake
-                checkout.name = this.order.name
-                checkout.phone = this.order.phone
+                order.id = Math.floor(Math.random() * 22)
+                order.IsTake = this.order.isTake
+                order.name = this.order.name
+                order.phone = this.order.phone
                 this.order.name = ''
                 this.order.phone = ''
-                this.$emit('checkout')
+                this.$emit('createOrder', order)
             } else if (this.order.isTake == 'delivery' && this.order.name.length >= 3 && this.order.phone >= 8 && this.order.adress.length >= 8 && this.order.floor.length >= 1) {
-                checkout.id = Math.floor(Math.random() * 22)
-                checkout.IsTake = this.order.isTake
-                checkout.name = this.order.name
-                checkout.phone = this.order.phone
-                checkout.adress = this.order.adress
-                checkout.floor = this.order.floor
+                order.id = Math.floor(Math.random() * 22)
+                order.IsTake = this.order.isTake
+                order.name = this.order.name
+                order.phone = this.order.phone
+                order.adress = this.order.adress
+                order.floor = this.order.floor
                 this.order.cityCom = this.order.cityCom
                 this.order.name = ''
                 this.order.phone = ''
                 this.order.adress = ''
                 this.order.floor = ''
                 this.order.cityCom = ''
-                this.$emit('checkout')
+                this.$emit('createOrder', order)
             }
+
         }
     },
 
@@ -71,7 +72,7 @@ export default {
                 <h2 class="form-title sm:ml-6">Доставка</h2>
                 <form action=""
                     class="form h-full flex flex-col  justify-around pt-4 gap-2 sm:justify-between sm:py-8 sm:px-2.5 "
-                    @submit.prevent="orderCheckout">
+                    @submit.prevent="orderorder">
                     <div class="modal-group flex flex-col gap-2 ">
                         <input type="text" placeholder="Ваше Имя" minlength="4" maxlength="10"
                             class="input-name mt-3 border-none rounded-xl text-[#b1b1b1] " v-model.trim="order.name">
@@ -102,7 +103,7 @@ export default {
                     </div>
                     <button
                         class="btn-confirn bg-[#FF7020] mt-8 py-3 px-28 text-white rounded-xl w-80 hover:bg-[#ffab08]"
-                        @:click="orderCheckout">
+                        @:click="orderorder">
                         Оформить</button>
                 </form>
             </div>

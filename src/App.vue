@@ -67,6 +67,13 @@ export default {
             const items2 = [burger, snacks, hotDog]
             this.currentTab = +dataId
             this.currentItems = items2[this.currentTab]
+        },
+        orderCheckout(order) {
+            console.log(order)
+            this.showIsModal = false
+            this.cartItems.splice(0)
+            this.isVisibleCart = false
+            this.cartItem = {}
         }
     },
 
@@ -76,7 +83,7 @@ export default {
 <template>
     <AppHeader />
     <AppPromo />
-    <AppModal :showIsModal="showIsModal" @modal-Close="closeModal" />
+    <AppModal :showIsModal="showIsModal" @modal-Close="closeModal" @createOrder="orderCheckout" />
     <main>
         <AppNav @dataTab="changeTab" />
         <section>
