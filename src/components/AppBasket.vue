@@ -34,7 +34,8 @@ export default {
         },
         incrementCount(basketItem) {
             this.$emit('increment', basketItem)
-        }
+        },
+
     },
     computed: {
         totalPice() {
@@ -43,6 +44,11 @@ export default {
             }, 0)
 
         },
+        totalCount() {
+            return this.basketItems.reduce((total, item) => {
+                return total += parseInt(item.count)
+            }, 0)
+        }
 
     },
 
@@ -57,9 +63,9 @@ export default {
         <div class="main-cart flex justify-around">
             <button class="cart-btn py-1 px-4 text-2xl font-black bg-white"
                 @:click="isVisible = !isVisible">Корзина</button>
-            <span class="item-count bg-[#f2f2f3] py-2 px-4 rounded-xl text-center">{{ basketItems.length
-                }}</span>
+            <span class="item-count bg-[#f2f2f3] py-2 px-4 rounded-xl text-center">{{ totalCount }}</span>
         </div>
+        <span class="main-cart-empty" v-show="basketItems.length == 0"> В корзине пока пусто :( </span>
         <div class="content-cart  text-xs  text-nowrap mt-4 " v-if="isVisible">
             <ul class="lists-item  flex flex-col  gap-[2rem]">
                 <li class="border-t border-[#f2f2f3]   flex justify-between items-center  pt-2.5 px-4 pb-0.5 h-20"
@@ -97,7 +103,6 @@ export default {
                 </div>
             </div>
         </div>
-        <span class="main-cart-empty" v-else> В корзине пока пусто :( </span>
     </aside>
 </template>
 

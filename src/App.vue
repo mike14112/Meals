@@ -39,7 +39,6 @@ export default {
             if (cartItemIndex === -1) {
                 this.cartItem = this.currentItems.find(item => item.title === title);
                 this.cartItems.push(this.cartItem)
-                console.log(this.items)
                 this.cartItem.count = 1
             } else {
                 this.cartItems.forEach((item) => {
