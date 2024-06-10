@@ -19,8 +19,7 @@ export default {
             showIsModal: false,
             isVisibleCart: false,
             cartItems: [],
-            cartItem: {}
-
+            cartItem: {},
         }
     },
     methods: {
