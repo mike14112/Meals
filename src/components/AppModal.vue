@@ -1,5 +1,4 @@
 <script>
-
 export default {
     emits: ['createOrder', 'modalClose'],
     props: {
