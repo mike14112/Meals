@@ -49,7 +49,7 @@ export default {
 <template>
     <div :class="containerClass">
         <div>
-            <img src="../../../public/img/icon/bell.png" alt="" class="w-6 h-6">
+            <img src="/img/icon/bell.png" alt="" class="w-6 h-6">
         </div>
         <div class=" flex-1 space-y-2">
             <h2 class="font-medium text-blue-900">{{ title }}</h2>
@@ -57,7 +57,7 @@ export default {
         </div>
         <div class=" shrink-0">
             <button class="text-blue-900/70  hover:bg-blue-200 p-0.5 rounded-md -m-1" @:click="closeToast"><img
-                    src="../../../public/img/icon/close.png" alt="" class="w-6 h-6"></button>
+                    src="/img/icon/close.png" alt="" class="w-6 h-6"></button>
         </div>
     </div>
 </template>
