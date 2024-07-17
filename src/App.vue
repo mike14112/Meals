@@ -7,9 +7,9 @@ import ListItems from "./components/ListItems.vue"
 import AppFooter from "./components/AppFooter.vue"
 import AppModal from "./components/AppModal.vue"
 import AppToast from "./components/AppToast.vue"
-import burger from '../src/burger.json'
-import snacks from '../src/snacks.json'
-import hotDog from '../src/hot-dog.json'
+import burger from './burger.json'
+import snacks from './snacks.json'
+import hotDog from './hot-dog.json'
 export default {
     components: { AppHeader, AppPromo, AppNav, AppBasket, ListItems, AppFooter, AppModal, AppToast },
     data() {
@@ -82,10 +82,13 @@ export default {
 
         closeToast(event) {
             this.isShowToast = false
+
+
         }
     },
-
-
+    mounted() {
+        console.log(this.currentItems)
+    }
 }
 </script>
 

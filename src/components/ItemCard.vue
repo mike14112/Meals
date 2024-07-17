@@ -40,6 +40,7 @@ export default {
   methods: {
     addItem() {
       this.$emit('add', this.title)
+      console.log(this.src)
     },
 
   },
