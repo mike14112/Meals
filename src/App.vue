@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive } from "vue"
+import { ref, reactive, onMounted } from "vue"
 import AppHeader from "./components/AppHeader.vue"
 import AppPromo from "./components/AppPromo.vue"
 import AppNav from "./components/AppNav.vue"
@@ -16,11 +16,12 @@ const currentTab = ref(0),
     showIsModal = ref(false),
     isVisibleCart = ref(false),
     cartItems = ref([]),
-    cartItem = reactive({}),
     title = ref('sucsess'),
     content = ref('order'),
     currentStatus = ref('sucsess'),
     isShowToast = ref(false)
+let cartItem = reactive({})
+
 
 const closeModal = () => {
     showIsModal.value = !showIsModal.value
@@ -37,9 +38,10 @@ const addItem = (title) => {
     const cartItemIndex = cartItems.value.findIndex(item => item.title === title)
     isVisibleCart.value = true
     if (cartItemIndex === -1) {
-        cartItem.count = currentItems.value.find(item => item.title === title);
-        cartItems.value.push(cartItem)
+        cartItem = currentItems.value.find(item => item.title === title);
         cartItem.count = 1
+        cartItems.value.push(cartItem)
+        console.log(cartItems.value)
     } else {
         cartItems.value.forEach((item) => {
             if (item.title == title) {
@@ -82,6 +84,7 @@ const orderCheckout = (order) => {
 const closeToast = (event) => {
     isShowToast.value = false
 }
+
 </script>
 
 <!-- <script>
@@ -183,7 +186,7 @@ export default {
         <section>
             <div class="container">
                 <div class="wrapper">
-                    <AppBasket @showModal="openModal" :cartItems="cartItems" :isVisibleCart="isVisibleCart"
+                    <AppBasket @showModal="openModal" :cartItems="cartItems" :isVisible="isVisibleCart"
                         @decrement="decrementCount" @increment="incrementCount" />
                     <ListItems :items="currentItems" @add="addItem" />
                 </div>
