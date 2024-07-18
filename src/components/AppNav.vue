@@ -1,12 +1,15 @@
-<script>
-export default {
-    emits: ['dataTab'],
-    methods: {
-        getTab(event) {
-            this.$emit('dataTab', event.currentTarget.getAttribute('data-tab'))
-        }
-    }
+<script setup>
+const emits = defineEmits(['dataTab'])
+
+const getTab = (event) => {
+    emits('dataTab', event.currentTarget.getAttribute('data-tab'))
+
 }
+
+</script>
+
+<script>
+
 </script>
 
 <template>
