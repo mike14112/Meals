@@ -26,13 +26,7 @@ let cartItem = reactive({})
 const closeModal = () => {
     showIsModal.value = !showIsModal.value
 }
-const openModal = () => {
-    if (cartItems.value.length > 0) {
-        showIsModal.value = true
-    } else {
-        showIsModal.value = false
-    }
-}
+
 
 const addItem = (title) => {
     const cartItemIndex = cartItems.value.findIndex(item => item.title === title)
@@ -74,6 +68,7 @@ const changeTab = (dataId) => {
 }
 
 const orderCheckout = (order) => {
+    console.log(order)
     showIsModal.value = false
     cartItems.value.splice(0)
     isVisibleCart.value = false
@@ -85,6 +80,14 @@ const closeToast = (event) => {
     isShowToast.value = false
 }
 
+const openModal = () => {
+    console.log(cartItems.value)
+    if (cartItems.value.length >= 0) {
+        showIsModal.value = true
+    } else {
+        showIsModal.value = false
+    }
+}
 </script>
 
 <!-- <script>

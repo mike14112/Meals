@@ -1,23 +1,23 @@
 <script setup>
-import { computed, onMounted, onUpdated, ref } from 'vue';
+import { computed, ref } from 'vue';
 
-const emits = defineEmits(['decrement', 'increment', 'showmodal'])
+const emits = defineEmits(['decrement', 'increment', 'showModal'])
 
 const props = defineProps({
     cartItems: {
         type: Array,
         required: true
     },
-    isVisivble: {
+    isVisible: {
         type: Boolean,
         required: true
     }
 })
-const isVisible = ref(props.isVisivble)
+const isVisible = ref(props.isVisible)
 
 
 const openModal = () => {
-    emits('showmodal')
+    emits('showModal')
 }
 
 
@@ -43,10 +43,7 @@ const totalCount = computed(() => {
     }, 0)
 })
 
-onUpdated(() => {
-    console.log(props.cartItems)
 
-})
 </script>
 
 <script>
