@@ -1,5 +1,4 @@
 <script setup>
-import { watch } from 'fs';
 import { computed, ref } from 'vue';
 
 const emits = defineEmits(['closeToast'])
@@ -18,18 +17,18 @@ const props = defineProps({
         requred: true
     }
 })
-const containerClass = ref('bg-blue-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10')
-computed(() => {
+const containerClass = computed(() => {
     switch (props.currentStatus) {
         case 'error':
-            return 'bg-red-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10 ';
+            return containerClass.value = 'bg-red-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10 ';
         case 'warning':
-            return 'bg-yellow-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
-        case 'sucsess':
-            return 'bg-green-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
+            return containerClass.value = 'bg-yellow-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
+        case 'success':
+            return containerClass.value = 'bg-green-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
         case 'info':
-            return 'bg-blue-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
+            return containerClass.value = 'bg-blue-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
     }
+
 })
 
 const closeToast = () => {

@@ -16,9 +16,9 @@ const currentTab = ref(0),
     showIsModal = ref(false),
     isVisibleCart = ref(false),
     cartItems = ref([]),
-    title = ref('sucsess'),
+    title = ref('success'),
     content = ref('order'),
-    currentStatus = ref('sucsess'),
+    currentStatus = ref('success'),
     isShowToast = ref(false)
 let cartItem = reactive({})
 
@@ -82,7 +82,7 @@ const closeToast = (event) => {
 
 const openModal = () => {
     console.log(cartItems.value)
-    if (cartItems.value.length >= 0) {
+    if (cartItems.value.length > 0) {
         showIsModal.value = true
     } else {
         showIsModal.value = false
