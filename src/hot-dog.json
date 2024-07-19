@@ -6,7 +6,7 @@
       "title":"Домашний хот-дог",
       "price": 290,
       "weigth":250,
-      "src":"/img/items/3-1.png",
+      "src":"/meals/img/items/3-1.png",
       "nameCategory":"Хот-доги"
 
     },
@@ -17,7 +17,7 @@
     "title":"Жгучий Хот-дог",
     "price":239,
     "weigth":245,
-    "src":"/img/items/3-2.png",
+    "src":"/meals/img/items/3-2.png",
     "nameCategory":"Хот-доги"
 
   },
@@ -27,7 +27,7 @@
     "title": "Классический Хот-дог",
     "price": 220,     
     "weigth":215,
-    "src":"/img/items/3-3.png",
+    "src":"/meals/img/items/3-3.png",
     "nameCategory":"Хот-доги"
 
   }

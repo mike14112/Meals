@@ -19,6 +19,7 @@ const props = defineProps({
   title: {
     type: String,
     required: true
+
   },
   price: {
     type: Number,
