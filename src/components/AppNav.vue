@@ -7,11 +7,6 @@ const getTab = (event) => {
 }
 
 </script>
-
-<script>
-
-</script>
-
 <template>
     <section class="navigation py-[4rem]">
         <div class="container">

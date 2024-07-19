@@ -46,66 +46,6 @@ const totalCount = computed(() => {
 
 </script>
 
-<script>
-
-// export default {
-//     emits: ['decrement', 'increment', 'showModal'],
-//     props: {
-//         cartItems: {
-//             type: Array,
-//             required: true,
-//         },
-//         isVisibleCart: {
-//             type: Boolean,
-//             required: true,
-
-
-//         }
-//     },
-//     data() {
-//         return {
-//             basketItems: this.cartItems,
-//             isVisible: this.isVisibleCart,
-//         }
-//     },
-
-//     methods: {
-//         openModal() {
-//             this.$emit('showModal')
-//         },
-//         changeVisibleCart() {
-//             this.isVisible = !this.isVisible
-//         },
-//         decrementCount(cartItem) {
-//             this.$emit('decrement', cartItem)
-
-//         },
-//         incrementCount(basketItem) {
-//             this.$emit('increment', basketItem)
-//         },
-
-//     },
-//     computed: {
-//         totalPice() {
-//             return this.basketItems.reduce((acc, item) => {
-//                 return acc += parseInt(item.price) * parseInt(item.count)
-//             }, 0)
-
-//         },
-//         totalCount() {
-//             return this.basketItems.reduce((total, item) => {
-//                 return total += parseInt(item.count)
-//             }, 0)
-//         }
-
-//     },
-
-
-
-// }
-
-</script>
-
 <template>
     <aside class=" bg-white   py-6 px-4 min-w-72 min-h-28 mt-16 md:absolute md:z-10 md:mt-[-1.5rem] rounded-xl   ">
         <div class=" flex justify-around">

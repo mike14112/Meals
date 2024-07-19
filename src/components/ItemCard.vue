@@ -43,44 +43,7 @@ const addItem = (title) => {
 } 
 </script>
 
-<!-- <script>
-import AddBtn from './AddBtn.vue';
-export default {
-  emits: ['add'],
-  components: { AddBtn },
-  props: {
-    src: {
-      type: String,
-      required: true
-    },
-    title: {
-      type: String,
-      required: true
-    },
-    price: {
-      type: Number,
-      required: true
-    },
-    weigth: {
-      type: Number,
-      required: true
-    },
-    id: {
-      type: Number,
-      required: true
-    }
 
-
-  },
-  methods: {
-    addItem() {
-      this.$emit('add', this.title)
-    },
-
-  },
-
-}
-</script> -->
 <template>
   <li
     class="carl  max-w-[20rem] bg-white  p-3  rounded-[1rem] flex flex-col box-border  justify-around md:w-[9.5rem]  md:p-1 sm:w-[9.3rem]">

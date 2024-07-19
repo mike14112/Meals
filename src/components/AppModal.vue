@@ -50,66 +50,6 @@ const createOrder = () => {
 
 
 </script>
-
-<!-- <script>
-export default {
-    emits: ['createOrder', 'modalClose'],
-    props: {
-        showIsModal: {
-            type: Boolean,
-            required: true
-        },
-    },
-
-    data() {
-        return {
-            order: {
-                name: '',
-                phone: '',
-                isTake: 'pickup',
-                adress: '',
-                cityCom: '',
-                floor: '',
-            }
-
-        }
-    },
-    methods: {
-        closeModal() {
-            this.$emit('modalClose')
-        },
-        orderorder() {
-            const order = {}
-            if (this.order.isTake == 'pickup' && this.order.name.length >= 3 && this.order.phone >= 8) {
-                order.id = Math.floor(Math.random() * 22)
-                order.IsTake = this.order.isTake
-                order.name = this.order.name
-                order.phone = this.order.phone
-                this.order.name = ''
-                this.order.phone = ''
-                this.$emit('createOrder', order)
-            } else if (this.order.isTake == 'delivery' && this.order.name.length >= 3 && this.order.phone >= 8 && this.order.adress.length >= 8 && this.order.floor.length >= 1) {
-                order.id = Math.floor(Math.random() * 22)
-                order.IsTake = this.order.isTake
-                order.name = this.order.name
-                order.phone = this.order.phone
-                order.adress = this.order.adress
-                order.floor = this.order.floor
-                this.order.cityCom = this.order.cityCom
-                this.order.name = ''
-                this.order.phone = ''
-                this.order.adress = ''
-                this.order.floor = ''
-                this.order.cityCom = ''
-                this.$emit('createOrder', order)
-            }
-
-        }
-    },
-
-}
-</script> -->
-
 <template>
     <div class="modal bg-black  w-full h-full z-20 fixed left-2/4 top-2/4 translate-x-[-50%] translate-y-[-50%]  sm:top-[40%] "
         v-if="showIsModal">

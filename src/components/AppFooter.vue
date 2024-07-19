@@ -1,7 +1,5 @@
-<script>
-export default {
+<script setup>
 
-}
 </script>
 <template>
     <footer class=" bg-white mt-28 pt-14  pb-10 px-8 ">

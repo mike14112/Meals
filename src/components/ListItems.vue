@@ -16,34 +16,6 @@ const addItem = (title) => {
 }
 
 </script>
-
-<!-- <script>
-import ItemCard from './ItemCard.vue';
-
-
-
-
-export default {
-    emits: ['add'],
-    components: { ItemCard },
-
-    props: {
-        items: {
-            type: Array,
-            required: true,
-        },
-
-    },
-    methods: {
-        additem(id) {
-            this.$emit('add', id)
-        }
-    },
-
-
-}
-</script> -->
-
 <template>
     <div class="tab-content  flex  flex-col gap-8 md:mt-32  md:gap-6 " v-if="items != undefined">
         <h2 class="text-[2.5rem] font-bold">{{ props.items[0].nameCategory }}</h2>
