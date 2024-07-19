@@ -1,51 +1,40 @@
-<script>
-export default {
-    emits: ['closeToast'],
-    props: {
-        currentStatus: {
-            type: String,
-            requred: true
-        },
-        title: {
-            type: String,
-            requred: true
-        },
-        content: String,
+<script setup>
+import { computed } from 'vue';
+
+const emits = defineEmits(['closeToast'])
+const props = defineProps({
+    currentStatus: {
+        type: String,
         requred: true
     },
-    isShow: {
-        type: Boolean,
-        required: true
+    title: {
+        type: String,
+        requred: true
     },
-    data() {
-        return {
-            containerClass: 'bg-blue-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10 ',
-            isShow: this.isShow
-        }
-    },
-    methods: {
-        closeToast() {
-            this.$emit('closeToast')
-        }
-    },
-    computed: {
-        containerClass() {
-            switch (this.currentStatus) {
-                case 'error':
-                    return 'bg-red-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10 ';
-                case 'warning':
-                    return 'bg-yellow-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
-                case 'sucsess':
-                    return 'bg-green-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
-                case 'info':
-                    return 'bg-blue-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
 
-            }
-        }
+    content: {
+        String,
+        requred: true
     }
+})
+const containerClass = computed(() => {
+    switch (props.currentStatus) {
+        case 'error':
+            return containerClass.value = 'bg-red-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10 ';
+        case 'warning':
+            return containerClass.value = 'bg-yellow-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
+        case 'success':
+            return containerClass.value = 'bg-green-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
+        case 'info':
+            return containerClass.value = 'bg-blue-300 flex   p-4 rounded-md space-x-3 w-64 absolute top-2 right-10';
+    }
+
+})
+
+const closeToast = () => {
+    emits('closeToast')
 }
 </script>
-
 <template>
     <div :class="containerClass">
         <div>
