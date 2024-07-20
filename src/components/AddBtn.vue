@@ -4,7 +4,8 @@
 
 <template>
     <div>
-        <button class=" btn-add ">
+        <button
+            class=" mt-2 hover:bg-[#ffab08] py-3  rounded-xl w-72  md:w-32 md:h-10 md:p-0  sm:w-32 sm:h-10 text-center ">
             <slot></slot>
         </button>
     </div>
@@ -12,31 +13,4 @@
 
 
 
-<style scoped>
-.btn-add {
-    margin-top: 8px;
-    padding: 12px 101px;
-    border-radius: 12px;
-    width: 280px;
-}
-
-.btn-add:hover {
-    background-color: #ffab08;
-}
-
-@media screen and (min-width: 768px) and (max-width:1023px) {
-    .btn-add {
-        width: 137px;
-        height: 30px;
-        padding: 0;
-    }
-}
-
-@media screen and (max-width:767px) {
-    .btn-add {
-        width: 137px;
-        height: 30px;
-        padding: 0;
-    }
-}
-</style>
+<style scoped></style>

@@ -14,12 +14,12 @@
             <div class="col-span-1 md:col-span-[1/3] ">
                 <h4>Мы в соцсеятх</h4>
                 <div class=" flex justify-start mt-[1.5rem] gap-4 ">
-                    <img src="/img/icon/bi_telegram.png" alt="Telegram"> <a href=""></a>
-                    <img src="/img/icon/vk.png" alt="VK"> <a href=""></a>
+                    <a href=""> <img src="/img/icon/bi_telegram.png" alt="Telegram"> </a>
+                    <a href=""> <img src="/img/icon/vk.png" alt="VK"> </a>
                 </div>
             </div>
             <div class=" md:col-span-[1/3] mt-[3.8rem]">
-                <span>© YouMeal, 2022</span> <br>
+                <span>© YouMeal, 2024</span> <br>
                 <span>Design: Anastasia Ilina</span>
             </div>
         </div>
